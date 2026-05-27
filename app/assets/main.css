@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@font-face {
+  font-family: "mirage-trial";
+  src: url("/mirage-trial.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+body {
+  font-family: "mirage-trial", sans-serif;
+  /* font-weight: 600; */
+}
+.dark {
+  --ui-bg: #000;
+}
+
+.underlined {
+  /* font-variation-settings: "slnt" -16; */
+  @apply underline underline-offset-2 decoration-black/20 dark:decoration-white/20 hover:opacity-70 transition;
+}
+.mix {
+  @apply mix-blend-multiply dark:mix-blend-luminosity;
+}
