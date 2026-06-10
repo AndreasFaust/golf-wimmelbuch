@@ -65,9 +65,12 @@ useSeoMeta({
     </section>
     <section id="bestellen" class="bg-white relative z-10">
       <div class="max-w-6xl mx-auto p-10 rounded-3xl flex flex-col gap-10">
-        <h2 class="font-bold text-4xl leading-none text-balance mix">
-          Jetzt unverbindlich anfragen
-        </h2>
+        <div class="flex items-baseline gap-5">
+          <h2 class="font-bold text-4xl leading-none text-balance mix">
+            Jetzt unverbindlich anfragen
+          </h2>
+          <p class="text-sm">* Pflichtfeld</p>
+        </div>
         <RequestForm />
       </div>
     </section>

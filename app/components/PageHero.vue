@@ -7,16 +7,21 @@ const { y } = useParallaxHeader({ speed: -3, opacity: 0.001 });
     :style="{ y }"
     :class="[
       'relative',
-      'h-[90svh] flex items-center overflow-hidden bg-contain bg-bottom bg-no-repeat',
+      'sm:h-[90svh] flex items-center overflow-hidden bg-contain bg-bottom bg-no-repeat',
       'bg-[url(/background.avif)]',
       'after:absolute after:inset-0 after:bg-linear-to-b after:from-blue-100 after:to-transparent after:z-10',
     ]"
   >
     <div
-      class="relative z-20 max-w-6xl mx-auto grid grid-cols-5 px-10 gap-20 items-center mb-[5svh]"
+      :class="
+        cn(
+          'relative z-20 max-w-6xl mx-auto grid sm:grid-cols-5 px-10 gap-10 md:gap-20 items-center mb-[5svh]',
+          'max-sm:py-20'
+        )
+      "
     >
       <AnimatedBook
-        class="col-span-2"
+        class="max-sm:w-1/2 sm:col-span-2"
         :front="{
           url: '/wimmelbuch-front.jpg',
           alt: 'Title',
@@ -45,22 +50,24 @@ const { y } = useParallaxHeader({ speed: -3, opacity: 0.001 });
         :animate="{ x: 0, y: 0 }"
         :start="true"
       />
-      <div class="relative flex flex-col gap-10 col-span-3">
+      <div class="relative flex flex-col gap-5 sm:gap-10 sm:col-span-3">
         <NuxtImg
           src="/bird.png"
           alt="Bird"
           width="310"
           height="261"
-          class="w-28 absolute -top-40 left-20"
+          class="w-28 absolute -top-10 max-sm:right-0 sm:-top-40 sm:left-20"
         />
         <NuxtImg
           src="/balloon.png"
           alt="Balloon"
           width="284"
           height="385"
-          class="w-24 absolute -top-20 right-20"
+          class="w-24 absolute max-sm:-top-full sm:-top-20 right-20"
         />
-        <h1 class="w-full text-[80px] leading-none text-balance mix">
+        <h1
+          class="w-full text-6xl sm:text-[80px] leading-none text-balance mix"
+        >
           Das große
           <span class="whitespace-nowrap font-bold">Golf-Wimmelbuch</span>
         </h1>

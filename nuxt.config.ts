@@ -3,6 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    cleverreach: {
+      clientId: "",
+      clientSecret: "",
+      groupId: "",
+    },
+  },
+
   modules: [
     "@nuxt/eslint",
     "@nuxt/hints",
@@ -14,5 +22,13 @@ export default defineNuxtConfig({
   ui: {
     fonts: false,
     colorMode: false,
+  },
+  app: {
+    head: {
+      title: "Das große Golf-Wimmelbuch",
+      link: [
+        { rel: "stylesheet", href: "https://use.typekit.net/gmb7aiv.css" },
+      ],
+    },
   },
 });

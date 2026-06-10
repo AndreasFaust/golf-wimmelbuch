@@ -3,11 +3,11 @@ const route = useRoute();
 </script>
 
 <template>
-  <footer class="bg-blue-100 h-12 flex items-center">
+  <footer class="bg-blue-100 h-24 border-t border-blue-200 flex items-center">
     <div
       class="max-w-6xl w-full mx-auto px-10 flex items-center justify-between gap-2.5"
     >
-      <p class="text-xs leading-[1.4]">
+      <p class="leading-[1.4]">
         Copyright © {{ new Date().getFullYear() }}.
         <NuxtLink
           href="https://www.faust-kommunikation.de"
@@ -20,13 +20,13 @@ const route = useRoute();
         <NuxtLink
           v-if="route.path !== '/impressum'"
           href="https://www.faust-kommunikation.de/impressum"
-          class="text-xs leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
+          class="leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
           >Impressum</NuxtLink
         >
         <NuxtLink
           v-if="route.path !== '/datenschutz'"
           href="https://www.faust-kommunikation.de/datenschutzerklaerung"
-          class="text-xs leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
+          class="leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
           >Datenschutz</NuxtLink
         >
       </div>

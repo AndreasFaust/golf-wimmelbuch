@@ -26,6 +26,8 @@ defineProps<{
       :src="image.url"
       :alt="image.alt ?? ''"
       :sizes="sizes"
+      :width="image.width"
+      :height="image.height"
     />
   </div>
 </template>

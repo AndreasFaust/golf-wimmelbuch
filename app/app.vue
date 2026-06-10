@@ -1,7 +1,4 @@
 <template>
-  <Head>
-    <link rel="stylesheet" href="https://use.typekit.net/gmb7aiv.css" />
-  </Head>
   <UApp>
     <navigation
       class="fixed top-0 inset-x-0 z-20 bg-blue-100/90 backdrop-blur-sm border-b border-blue-200 h-12"
