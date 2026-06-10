@@ -3,30 +3,33 @@ const route = useRoute();
 </script>
 
 <template>
-  <footer
-    class="grid md:grid-cols-2 2xl:grid-cols-4 gap-[2vw] px-[2vw] content-between 2xl:content-end items-center mix"
-  >
-    <p class="text-lg">
-      <a href="mailto:mail@andreasfaust.de" class="underlined">Get in Touch</a>
-    </p>
-    <p class="text-lg">
-      Typeface:
-      <a href="https://dreamtype.xyz/typefaces/mirage" class="underlined"
-        >Mirage</a
-      >
-    </p>
-    <p class="text-xs leading-[1.4]">
-      Copyright © {{ new Date().getFullYear() }} Andreas Faust. All rights
-      reserved.
-    </p>
-    <div class="flex items-center gap-2 justify-between">
-      <NuxtLink
-        v-if="route.path !== '/impressum'"
-        href="/impressum"
-        class="text-xs leading-[1.4] underlined"
-        >Impressum</NuxtLink
-      >
-      <UColorModeButton class="w-max ml-auto" />
+  <footer class="bg-blue-100 h-12 flex items-center">
+    <div
+      class="max-w-6xl w-full mx-auto px-10 flex items-center justify-between gap-2.5"
+    >
+      <p class="text-xs leading-[1.4]">
+        Copyright © {{ new Date().getFullYear() }}.
+        <NuxtLink
+          href="https://www.faust-kommunikation.de"
+          target="_blank"
+          class="underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
+          >Faust Kommunikation KG</NuxtLink
+        >. Alle Rechte vorbehalten.
+      </p>
+      <div class="flex items-center gap-2.5 justify-between">
+        <NuxtLink
+          v-if="route.path !== '/impressum'"
+          href="https://www.faust-kommunikation.de/impressum"
+          class="text-xs leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
+          >Impressum</NuxtLink
+        >
+        <NuxtLink
+          v-if="route.path !== '/datenschutz'"
+          href="https://www.faust-kommunikation.de/datenschutzerklaerung"
+          class="text-xs leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
+          >Datenschutz</NuxtLink
+        >
+      </div>
     </div>
   </footer>
 </template>

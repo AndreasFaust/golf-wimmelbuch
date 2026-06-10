@@ -10,16 +10,23 @@
 
 body {
   font-family: "mirage-trial", sans-serif;
-  /* font-weight: 600; */
-}
-.dark {
-  --ui-bg: #000;
 }
 
-.underlined {
-  /* font-variation-settings: "slnt" -16; */
-  @apply underline underline-offset-2 decoration-black/20 dark:decoration-white/20 hover:opacity-70 transition;
+:root {
+  --ui-text: var(--ui-color-neutral-900);
 }
-.mix {
-  @apply mix-blend-multiply dark:mix-blend-luminosity;
+
+h1,
+h2,
+.duper {
+  font-family: duper, sans-serif;
+}
+
+@keyframes rotatingAnimationY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }

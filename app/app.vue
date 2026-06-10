@@ -1,14 +1,21 @@
 <template>
+  <Head>
+    <link rel="stylesheet" href="https://use.typekit.net/gmb7aiv.css" />
+  </Head>
   <UApp>
-    <div
-      class="grid md:grid-rows-8 min-h-screen lg:h-screen py-[2vw] gap-[2vw]"
+    <navigation
+      class="fixed top-0 inset-x-0 z-20 bg-blue-100/90 backdrop-blur-sm border-b border-blue-200 h-12"
     >
+      <div class="max-w-6xl mx-auto px-10 flex items-center h-full">
+        <p class="text-lg">
+          Das große
+          <span class="whitespace-nowrap font-bold">Golf-Wimmelbuch</span>
+        </p>
+      </div>
+    </navigation>
+    <main class="">
       <NuxtPage />
-      <PageFooter />
-    </div>
-    <NuxtImg
-      class="fixed inset-0 -z-10 w-screen h-screen object-contain object-top-right dark:invert dark:hue-rotate-100"
-      src="/background-blurred.png"
-    />
+    </main>
+    <PageFooter />
   </UApp>
 </template>
