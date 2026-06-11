@@ -63,7 +63,10 @@ useSeoMeta({
         />
       </div>
     </section>
-    <section id="bestellen" class="bg-white relative z-10">
+    <section
+      id="bestellen"
+      class="bg-blue-50 border-t border-blue-200 relative z-10"
+    >
       <div class="max-w-6xl mx-auto p-10 rounded-3xl flex flex-col gap-10">
         <div class="flex items-baseline gap-5">
           <h2 class="font-bold text-4xl leading-none text-balance mix">

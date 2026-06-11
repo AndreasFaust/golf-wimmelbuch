@@ -1,50 +1,33 @@
 import {
-  submitRequestToCleverReach,
-  type RequestFormPayload,
-} from "../utils/cleverreach";
+  isAutomatedSubmission,
+  validateRequestForm,
+} from "#shared/request-form";
+import { submitRequestToCleverReach } from "../utils/cleverreach";
+import { enforceRateLimit } from "../utils/rate-limit";
 
-function validatePayload(body: unknown): RequestFormPayload {
-  if (!body || typeof body !== "object") {
-    throw createError({
-      statusCode: 400,
-      statusMessage: "Invalid request body",
-    });
-  }
-
-  const data = body as Record<string, unknown>;
-  const email = String(data.email ?? "").trim();
-  const name = String(data.name ?? "").trim();
-  const club = String(data.club ?? "").trim();
-  const auflage = String(data.auflage ?? "").trim();
-
-  if (!email || !name || !club || !auflage) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: "Pflichtfelder fehlen",
-    });
-  }
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: "Ungültige E-Mail-Adresse",
-    });
-  }
-
-  return {
-    email,
-    name,
-    club,
-    auflage,
-    phone: String(data.phone ?? "").trim() || undefined,
-    street: String(data.street ?? "").trim() || undefined,
-    city: String(data.city ?? "").trim() || undefined,
-    country: String(data.country ?? "").trim() || undefined,
-    message: String(data.message ?? "").trim() || undefined,
-  };
-}
+const RATE_LIMIT = {
+  max: 5,
+  windowMs: 15 * 60 * 1000,
+};
 
 export default defineEventHandler(async (event) => {
+  const ip = getRequestIP(event, { xForwardedFor: true }) ?? "unknown";
+  enforceRateLimit(`request:${ip}`, RATE_LIMIT);
+
+  const body = await readBody(event);
+
+  if (body && typeof body === "object" && isAutomatedSubmission(body)) {
+    return { success: true };
+  }
+
+  const result = validateRequestForm(body);
+  if (!result.success) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: result.errors[0]?.message ?? "Ungültige Anfrage",
+    });
+  }
+
   const config = useRuntimeConfig(event);
   const { clientId, clientSecret, groupId } = config.cleverreach;
 
@@ -55,12 +38,9 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const body = await readBody(event);
-  const payload = validatePayload(body);
-
   await submitRequestToCleverReach(
     { clientId, clientSecret, groupId },
-    payload,
+    result.data,
   );
 
   return { success: true };

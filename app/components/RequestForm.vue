@@ -1,31 +1,46 @@
 <script setup lang="ts">
 import type { FormError, FormSubmitEvent } from "@nuxt/ui";
+import {
+  AUFLAGE_OPTIONS,
+  COUNTRY_OPTIONS,
+  FIELD_LIMITS,
+  auxFieldKey,
+  validateRequestForm,
+} from "#shared/request-form";
+
+const auxField = auxFieldKey();
+
+type Auflage = (typeof AUFLAGE_OPTIONS)[number];
+type Country = (typeof COUNTRY_OPTIONS)[number];
 
 const state = reactive({
-  email: undefined,
-  name: undefined,
-  club: undefined,
-  phone: undefined,
-  message: undefined,
-  auflage: "100",
-  street: undefined,
-  city: undefined,
-  country: undefined,
+  email: undefined as string | undefined,
+  name: undefined as string | undefined,
+  club: undefined as string | undefined,
+  phone: undefined as string | undefined,
+  message: undefined as string | undefined,
+  auflage: "100" as Auflage,
+  street: undefined as string | undefined,
+  city: undefined as string | undefined,
+  country: undefined as Country | undefined,
+  [auxField]: "",
 });
 
 type Schema = typeof state;
 
-function validate(state: Partial<Schema>): FormError[] {
-  const errors = [];
-  if (!state.email) errors.push({ name: "email", message: "Pflichtfeld" });
-  if (!state.name) errors.push({ name: "name", message: "Pflichtfeld" });
-  if (!state.club) errors.push({ name: "club", message: "Pflichtfeld" });
-  if (!state.auflage) errors.push({ name: "auflage", message: "Pflichtfeld" });
-  return errors;
+function validate(formState: Partial<Schema>): FormError[] {
+  const result = validateRequestForm(formState);
+  if (result.success) return [];
+
+  return result.errors.map((error) => ({
+    name: error.field,
+    message: error.message,
+  }));
 }
 
 const toast = useToast();
 const isSubmitting = ref(false);
+const isSubmitted = ref(false);
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   isSubmitting.value = true;
@@ -36,23 +51,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       body: event.data,
     });
 
-    toast.add({
-      title: "Erfolgreich",
-      description: "Ihre Anfrage wurde erfolgreich gesendet.",
-      color: "success",
-    });
-
-    Object.assign(state, {
-      email: undefined,
-      name: undefined,
-      club: undefined,
-      phone: undefined,
-      message: undefined,
-      auflage: "100",
-      street: undefined,
-      city: undefined,
-      country: undefined,
-    });
+    isSubmitted.value = true;
   } catch {
     toast.add({
       title: "Fehler",
@@ -67,12 +66,32 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
+  <p v-if="isSubmitted" class="text-2xl text-balance mix">
+    Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in
+    Kürze bei Ihnen.
+  </p>
+
   <UForm
+    v-else
     :validate="validate"
     :state="state"
     class="space-y-4 grid grid-cols-2 gap-x-10 gap-y-5 items-start"
     @submit="onSubmit"
   >
+    <div
+      class="absolute left-[-9999px] h-px w-px overflow-hidden"
+      aria-hidden="true"
+    >
+      <input
+        :id="auxField"
+        v-model="state[auxField]"
+        :name="auxField"
+        type="text"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
     <UFormField
       label="Email*"
       name="email"
@@ -85,6 +104,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         required
         size="xl"
         class="w-full"
+        :maxlength="FIELD_LIMITS.email"
       />
     </UFormField>
 
@@ -94,7 +114,13 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       size="xl"
       :ui="{ error: 'absolute top-full' }"
     >
-      <UInput v-model="state.name" type="text" size="xl" class="w-full" />
+      <UInput
+        v-model="state.name"
+        type="text"
+        size="xl"
+        class="w-full"
+        :maxlength="FIELD_LIMITS.name"
+      />
     </UFormField>
 
     <UFormField
@@ -103,7 +129,13 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       size="xl"
       :ui="{ error: 'absolute top-full' }"
     >
-      <UInput v-model="state.club" type="text" size="xl" class="w-full" />
+      <UInput
+        v-model="state.club"
+        type="text"
+        size="xl"
+        class="w-full"
+        :maxlength="FIELD_LIMITS.club"
+      />
     </UFormField>
 
     <UFormField label="Mögliche Auflage*" name="auflage" size="xl">
@@ -111,41 +143,55 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         v-model="state.auflage"
         size="xl"
         class="w-full"
-        default="200"
-        :items="[
-          '100',
-          '200',
-          '250',
-          '300',
-          '350',
-          '400',
-          '450',
-          '500 oder mehr',
-        ]"
+        :items="[...AUFLAGE_OPTIONS]"
       />
     </UFormField>
+
     <div class="col-span-2 grid grid-cols-4 gap-x-10 gap-y-5">
       <UFormField label="Telefon" name="phone" size="xl">
-        <UInput v-model="state.phone" type="tel" size="xl" class="w-full" />
+        <UInput
+          v-model="state.phone"
+          type="tel"
+          size="xl"
+          class="w-full"
+          :maxlength="FIELD_LIMITS.phone"
+        />
       </UFormField>
       <UFormField label="Straße / Hausnummer" name="street" size="xl">
-        <UInput v-model="state.street" type="text" size="xl" class="w-full" />
+        <UInput
+          v-model="state.street"
+          type="text"
+          size="xl"
+          class="w-full"
+          :maxlength="FIELD_LIMITS.street"
+        />
       </UFormField>
       <UFormField label="PLZ / Ort" name="city" size="xl">
-        <UInput v-model="state.city" type="text" size="xl" class="w-full" />
+        <UInput
+          v-model="state.city"
+          type="text"
+          size="xl"
+          class="w-full"
+          :maxlength="FIELD_LIMITS.city"
+        />
       </UFormField>
       <UFormField label="Land" name="country" size="xl">
         <USelect
           v-model="state.country"
           size="xl"
           class="w-full"
-          default="Deutschland"
-          :items="['Deutschland', 'Österreich', 'Schweiz', 'Anderes']"
+          :items="[...COUNTRY_OPTIONS]"
         />
       </UFormField>
     </div>
+
     <UFormField label="Weitere Nachricht" name="message" size="xl">
-      <UTextarea v-model="state.message" type="text" size="xl" class="w-full" />
+      <UTextarea
+        v-model="state.message"
+        size="xl"
+        class="w-full"
+        :maxlength="FIELD_LIMITS.message"
+      />
     </UFormField>
 
     <UButton

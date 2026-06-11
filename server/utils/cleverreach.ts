@@ -41,17 +41,7 @@ async function getAccessToken(clientId: string, clientSecret: string) {
   return data.access_token;
 }
 
-export interface RequestFormPayload {
-  email: string;
-  name: string;
-  club: string;
-  auflage: string;
-  phone?: string;
-  street?: string;
-  city?: string;
-  country?: string;
-  message?: string;
-}
+import type { RequestFormPayload } from "#shared/request-form";
 
 function toGlobalAttributes(data: RequestFormPayload) {
   return {
