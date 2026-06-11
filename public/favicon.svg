@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Golf ball">
+  <defs>
+    <radialGradient id="highlight" cx="32%" cy="28%" r="68%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="55%" stop-color="#f8f8f8" />
+      <stop offset="100%" stop-color="#e4e4e4" />
+    </radialGradient>
+  </defs>
+  <circle cx="256" cy="256" r="232" fill="url(#highlight)" />
+  <g fill="#c8cdd3" opacity="0.85">
+    <circle cx="176" cy="168" r="18" />
+    <circle cx="256" cy="152" r="18" />
+    <circle cx="336" cy="168" r="18" />
+    <circle cx="144" cy="232" r="18" />
+    <circle cx="216" cy="216" r="18" />
+    <circle cx="296" cy="216" r="18" />
+    <circle cx="368" cy="232" r="18" />
+    <circle cx="176" cy="296" r="18" />
+    <circle cx="256" cy="280" r="18" />
+    <circle cx="336" cy="296" r="18" />
+    <circle cx="144" cy="360" r="18" />
+    <circle cx="216" cy="344" r="18" />
+    <circle cx="296" cy="344" r="18" />
+    <circle cx="368" cy="360" r="18" />
+    <circle cx="256" cy="376" r="18" />
+  </g>
+</svg>

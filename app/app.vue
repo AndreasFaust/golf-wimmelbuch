@@ -1,22 +1,42 @@
 <script setup lang="ts">
 import * as locales from "@nuxt/ui/locale";
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
+const config = useRuntimeConfig();
+const requestUrl = useRequestURL();
+
 const lang = computed(() => locales[locale.value].code);
 const dir = computed(() => locales[locale.value].dir);
+
+const siteUrl = computed(
+  () => config.public.siteUrl || requestUrl.origin,
+);
+const ogImage = computed(() => `${siteUrl.value}/og-image.jpg`);
 
 useHead({
   htmlAttrs: {
     lang,
     dir,
   },
+  link: [{ rel: "canonical", href: siteUrl }],
 });
 
-const { t } = useI18n();
 useSeoMeta({
-  title: t("meta.title"),
-  description: t("meta.description"),
-  // ogImage: settings.value?.ogImage as Media | null,
+  title: () => t("meta.title"),
+  description: () => t("meta.description"),
+  ogTitle: () => t("meta.title"),
+  ogDescription: () => t("meta.description"),
+  ogImage: () => ogImage.value,
+  ogUrl: () => siteUrl.value,
+  ogType: "website",
+  ogLocale: () => (locale.value === "de" ? "de_DE" : "en_US"),
+  ogLocaleAlternate: () =>
+    locale.value === "de" ? ["en_US"] : ["de_DE"],
+  ogSiteName: () => t("nav.brand"),
+  twitterCard: "summary_large_image",
+  twitterTitle: () => t("meta.title"),
+  twitterDescription: () => t("meta.description"),
+  twitterImage: () => ogImage.value,
 });
 </script>
 

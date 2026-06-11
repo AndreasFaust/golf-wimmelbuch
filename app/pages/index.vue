@@ -72,7 +72,7 @@ const contentImages: { src: string; width: number; height: number }[] = [
       class="bg-blue-50 border-t border-blue-200 relative z-10"
     >
       <div
-        class="max-w-6xl mx-auto px-5 md:px-10 py-10 rounded-3xl flex flex-col gap-5 md:gap-10"
+        class="max-w-6xl mx-auto px-5 md:px-10 py-10 lg:py-20 rounded-3xl flex flex-col gap-5 md:gap-10"
       >
         <div class="flex max-md:flex-col items-baseline gap-5">
           <h2 class="font-bold text-4xl leading-none text-balance mix">
