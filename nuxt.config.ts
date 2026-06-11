@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/scripts",
     "@nuxt/ui",
+    "@nuxtjs/i18n",
   ],
   css: ["~/assets/main.css"],
   ui: {
@@ -25,10 +26,24 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Das große Golf-Wimmelbuch",
       link: [
         { rel: "stylesheet", href: "https://use.typekit.net/gmb7aiv.css" },
       ],
     },
+  },
+  i18n: {
+    defaultLocale: "de",
+    locales: [
+      {
+        code: "de",
+        name: "Deutsch",
+        file: "de.json",
+      },
+      {
+        code: "en",
+        name: "English",
+        file: "en.json",
+      },
+    ],
   },
 });

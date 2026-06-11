@@ -24,7 +24,8 @@ export default defineEventHandler(async (event) => {
   if (!result.success) {
     throw createError({
       statusCode: 400,
-      statusMessage: result.errors[0]?.message ?? "Ungültige Anfrage",
+      statusMessage: "Invalid request",
+      data: { errors: result.errors },
     });
   }
 

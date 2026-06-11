@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "The Big Golf Search-and-Find Book",
+    "description": "This colorful golf-themed “Where’s What?” book introduces children to the best aspects of the sport. Funny stories, lovable characters, and vibrant illustrations turn the sport into a real adventure for little ones."
+  },
+  "hero": {
+    "title": "The Big Golf Search-and-Find Book",
+    "description": "The individual merchandise for your club",
+    "button": "Request now"
+  },
+  "nav": {
+    "title": "The Big {brand}",
+    "brand": "Golf Search-and-Find Book"
+  },
+  "preface": {
+    "text": "How do you introduce preschoolers to the world of golf? With colorful search-and-find books! Funny stories, lovable characters, and vibrant illustrations turn the sport into a real adventure for little ones.",
+    "summary": {
+      "title": "The book at a glance",
+      "items": [
+        "14 hand-illustrated pages",
+        "Individually tailored to your club and sponsors",
+        "Large format (260 x 375 mm, similar to A3)",
+        "Sturdy cardboard and high-quality finish"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Why a Search-and-Find Book?",
+      "description": "The Search-and-Find book introduces children to the best aspects of the sport. Funny stories, lovable characters, and vibrant illustrations turn the sport into a real adventure for little ones."
+    },
+    {
+      "title": "A Book, Many Possibilities",
+      "description": "Whether as merchandise in the club shop, as a heartfelt welcome gift for new members and guests, or as a fun time-waster in pediatric practices – the Search-and-Find book is a versatile showcase for the club and the sport. And the best: The proceeds from the sale can directly flow into youth work and promote the next generation."
+    },
+    {
+      "title": "Customized for your Club",
+      "description": "Your hand-drawn club house or a distinctive feature of your location adorns the title page. Your sponsors can immortalize themselves on the back and actively support the project."
+    }
+  ],
+  "requestForm": {
+    "title": "Request now",
+    "required": "* Required field",
+    "button": "Send",
+    "success": "Thank you! Your request has been successfully sent. We will contact you shortly.",
+    "error": "Error",
+    "errorMessage": "Your request could not be sent. Please try again later.",
+    "email": "Email*",
+    "name": "Contact person*",
+    "club": "Name of the club*",
+    "auflage": "Possible edition*",
+    "phone": "Phone",
+    "street": "Street / House number",
+    "city": "Postcode / City",
+    "country": "Country",
+    "countries": {
+      "de": "Germany",
+      "at": "Austria",
+      "ch": "Switzerland",
+      "other": "Other"
+    },
+    "message": "Additional message",
+    "fields": {
+      "email": "Email",
+      "name": "Contact person",
+      "club": "Club",
+      "auflage": "Edition",
+      "country": "Country",
+      "form": "Form"
+    },
+    "errors": {
+      "required": "{field} is required",
+      "maxLength": "Maximum {maxLength} characters",
+      "invalidEmail": "Invalid email address",
+      "invalidAuflage": "Invalid edition",
+      "invalidCountry": "Invalid country",
+      "invalidRequest": "Invalid request"
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy",
+    "imprint": "Imprint"
+  }
+}

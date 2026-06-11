@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Das große Golf-Wimmelbuch",
+    "description": "Das farbenfrohe Golf-Wimmelbuch zeigt Kindern den Golfsport in seinen schönsten Facetten. Witzige Geschichten, sympathische Figuren, und bunte Bilder machen den Sport für die Kleinen zum echten Abenteuer."
+  },
+  "nav": {
+    "title": "Das große {brand}",
+    "brand": "Golf-Wimmelbuch"
+  },
+  "hero": {
+    "description": "Das individuelle Merchandise für Ihren Club",
+    "button": "Jetzt anfragen"
+  },
+  "preface": {
+    "text": "Wie bringt man Vorschulkindern die Welt des Golfs näher? Mit farbenfrohen Wimmelbüchern! Witzige Geschichten, sympathische Figuren, und bunte Bilder machen den Sport für die Kleinen zum echten Abenteuer.",
+    "summary": {
+      "title": "Das Buch im Überblick",
+      "items": [
+        "14 hand-illustrierte Seiten",
+        "Individuelle Anpassung an Ihren Club und Ihre Sponsoren",
+        "Großes Format (260 x 375 mm, ähnlich DIN A3)",
+        "Stabiler Karton und hochwertige Verarbeitung"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Warum ein Wimmelbuch?",
+      "description": "Das Wimmelbuch zeigt Kindern den Golfsport in seinen schönsten Facetten. Die bunten Bilder sind sympathisch und altersgerecht aufbereitet. Sie sind voller lustiger und kurioser Geschichten und wecken den Wunsch, es selber auszuprobieren."
+    },
+    {
+      "title": "Ein Buch, viele Möglichkeiten",
+      "description": "Ob als Merchandise im Clubshop, als herzliches Willkommensgeschenk für Neumitglieder und Gäste oder als unterhaltsamer Zeitvertreib in Kinderarztpraxen – das Wimmelbuch ist ein vielseitiges Aushängeschild für den Club und den Golfsport. Und das Beste: Die Erlöse aus dem Verkauf können direkt in die Jugendarbeit fließen und fördern so den Nachwuchs."
+    },
+    {
+      "title": "Maßgeschneidert für Ihren Club",
+      "description": "Ihr von Hand nachgezeichnetes Clubhaus oder eine markante Besonderheit Ihres Platzes zieren das Titelblatt. Ihre Sponsoren können sich auf der Rückseite verewigen und das Projekt aktiv unterstützen."
+    }
+  ],
+  "requestForm": {
+    "title": "Jetzt unverbindlich anfragen",
+    "required": "* Pflichtfeld",
+    "button": "Absenden",
+    "success": "Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.",
+    "error": "Fehler",
+    "errorMessage": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+    "email": "Email*",
+    "name": "Ansprechpartner*",
+    "club": "Name des Clubs*",
+    "auflage": "Mögliche Auflage*",
+    "phone": "Telefon",
+    "street": "Straße / Hausnummer",
+    "city": "PLZ / Ort",
+    "country": "Land",
+    "countries": {
+      "de": "Deutschland",
+      "at": "Österreich",
+      "ch": "Schweiz",
+      "other": "Anderes"
+    },
+    "message": "Weitere Nachricht",
+    "fields": {
+      "email": "E-Mail",
+      "name": "Ansprechpartner",
+      "club": "Club",
+      "auflage": "Auflage",
+      "country": "Land",
+      "form": "Formular"
+    },
+    "errors": {
+      "required": "{field} ist ein Pflichtfeld",
+      "maxLength": "Maximal {maxLength} Zeichen",
+      "invalidEmail": "Ungültige E-Mail-Adresse",
+      "invalidAuflage": "Ungültige Auflage",
+      "invalidCountry": "Ungültiges Land",
+      "invalidRequest": "Ungültige Anfrage"
+    }
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "imprint": "Impressum"
+  }
+}

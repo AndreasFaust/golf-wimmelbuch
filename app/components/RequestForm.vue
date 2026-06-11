@@ -2,16 +2,17 @@
 import type { FormError, FormSubmitEvent } from "@nuxt/ui";
 import {
   AUFLAGE_OPTIONS,
+  COUNTRY_I18N_KEYS,
   COUNTRY_OPTIONS,
   FIELD_LIMITS,
   auxFieldKey,
   validateRequestForm,
+  type Country,
 } from "#shared/request-form";
 
 const auxField = auxFieldKey();
 
 type Auflage = (typeof AUFLAGE_OPTIONS)[number];
-type Country = (typeof COUNTRY_OPTIONS)[number];
 
 const state = reactive({
   email: undefined as string | undefined,
@@ -26,6 +27,15 @@ const state = reactive({
   [auxField]: "",
 });
 
+const { t } = useI18n();
+
+const countryItems = computed(() =>
+  COUNTRY_OPTIONS.map((value) => ({
+    label: t(`requestForm.countries.${COUNTRY_I18N_KEYS[value]}`),
+    value,
+  }))
+);
+
 type Schema = typeof state;
 
 function validate(formState: Partial<Schema>): FormError[] {
@@ -34,7 +44,10 @@ function validate(formState: Partial<Schema>): FormError[] {
 
   return result.errors.map((error) => ({
     name: error.field,
-    message: error.message,
+    message: t(`requestForm.errors.${error.code}`, {
+      field: t(`requestForm.fields.${error.field}`),
+      ...(error.params ?? {}),
+    }),
   }));
 }
 
@@ -54,9 +67,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     isSubmitted.value = true;
   } catch {
     toast.add({
-      title: "Fehler",
-      description:
-        "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+      title: t("requestForm.error"),
+      description: t("requestForm.errorMessage"),
       color: "error",
     });
   } finally {
@@ -67,8 +79,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
 <template>
   <p v-if="isSubmitted" class="text-2xl text-balance mix">
-    Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in
-    Kürze bei Ihnen.
+    {{ $t("requestForm.success") }}
   </p>
 
   <UForm
@@ -93,7 +104,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </div>
 
     <UFormField
-      label="Email*"
+      :label="$t('requestForm.email')"
       name="email"
       size="xl"
       :ui="{ error: 'absolute top-full' }"
@@ -109,7 +120,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </UFormField>
 
     <UFormField
-      label="Ansprechpartner*"
+      :label="$t('requestForm.name')"
       name="name"
       size="xl"
       :ui="{ error: 'absolute top-full' }"
@@ -124,7 +135,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </UFormField>
 
     <UFormField
-      label="Name des Clubs*"
+      :label="$t('requestForm.club')"
       name="club"
       size="xl"
       :ui="{ error: 'absolute top-full' }"
@@ -138,7 +149,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       />
     </UFormField>
 
-    <UFormField label="Mögliche Auflage*" name="auflage" size="xl">
+    <UFormField :label="$t('requestForm.auflage')" name="auflage" size="xl">
       <USelect
         v-model="state.auflage"
         size="xl"
@@ -148,7 +159,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </UFormField>
 
     <div class="col-span-2 grid grid-cols-4 gap-x-10 gap-y-5">
-      <UFormField label="Telefon" name="phone" size="xl">
+      <UFormField :label="$t('requestForm.phone')" name="phone" size="xl">
         <UInput
           v-model="state.phone"
           type="tel"
@@ -157,7 +168,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           :maxlength="FIELD_LIMITS.phone"
         />
       </UFormField>
-      <UFormField label="Straße / Hausnummer" name="street" size="xl">
+      <UFormField :label="$t('requestForm.street')" name="street" size="xl">
         <UInput
           v-model="state.street"
           type="text"
@@ -166,7 +177,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           :maxlength="FIELD_LIMITS.street"
         />
       </UFormField>
-      <UFormField label="PLZ / Ort" name="city" size="xl">
+      <UFormField :label="$t('requestForm.city')" name="city" size="xl">
         <UInput
           v-model="state.city"
           type="text"
@@ -175,17 +186,17 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           :maxlength="FIELD_LIMITS.city"
         />
       </UFormField>
-      <UFormField label="Land" name="country" size="xl">
+      <UFormField :label="$t('requestForm.country')" name="country" size="xl">
         <USelect
           v-model="state.country"
           size="xl"
           class="w-full"
-          :items="[...COUNTRY_OPTIONS]"
+          :items="countryItems"
         />
       </UFormField>
     </div>
 
-    <UFormField label="Weitere Nachricht" name="message" size="xl">
+    <UFormField :label="$t('requestForm.message')" name="message" size="xl">
       <UTextarea
         v-model="state.message"
         size="xl"
@@ -199,7 +210,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       size="xl"
       class="w-max rounded-full text-xl pr-5 self-center"
       icon="lucide:send"
-      label="Absenden"
+      :label="$t('requestForm.button')"
       :loading="isSubmitting"
       :disabled="isSubmitting"
     />

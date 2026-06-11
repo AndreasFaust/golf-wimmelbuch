@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
+const { locale, setLocale, locales } = useI18n();
 </script>
 
 <template>
@@ -14,21 +15,26 @@ const route = useRoute();
           target="_blank"
           class="underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
           >Faust Kommunikation KG</NuxtLink
-        >. Alle Rechte vorbehalten.
+        >. {{ $t("footer.copyright") }}
       </p>
       <div class="flex items-center gap-2.5 justify-between">
         <NuxtLink
           v-if="route.path !== '/impressum'"
           href="https://www.faust-kommunikation.de/impressum"
           class="leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
-          >Impressum</NuxtLink
+          >{{ $t("footer.imprint") }}</NuxtLink
         >
         <NuxtLink
           v-if="route.path !== '/datenschutz'"
           href="https://www.faust-kommunikation.de/datenschutzerklaerung"
           class="leading-[1.4] underline decoration-1 underline-offset-2 decoration-transparent hover:decoration-primary/50 transition-all"
-          >Datenschutz</NuxtLink
+          >{{ $t("footer.privacy") }}</NuxtLink
         >
+        <ULocaleSelect
+          :model-value="locale"
+          :locales="locales"
+          @update:model-value="setLocale($event)"
+        />
       </div>
     </div>
   </footer>

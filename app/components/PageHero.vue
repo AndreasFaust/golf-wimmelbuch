@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { motion } from "motion-v";
 const { y } = useParallaxHeader({ speed: -3, opacity: 0.001 });
+const { locale } = useI18n();
 </script>
 <template>
   <motion.header
@@ -56,23 +57,34 @@ const { y } = useParallaxHeader({ speed: -3, opacity: 0.001 });
           alt="Bird"
           width="310"
           height="261"
-          class="w-28 absolute -top-10 max-sm:right-0 sm:-top-40 sm:left-20"
+          class="w-28 absolute -top-10 max-sm:right-0 sm:-top-45 sm:left-20"
         />
         <NuxtImg
           src="/balloon.png"
           alt="Balloon"
           width="284"
           height="385"
-          class="w-24 absolute max-sm:-top-full sm:-top-20 right-20"
+          class="w-24 absolute max-sm:-top-full sm:-top-30 right-20"
         />
-        <h1
+        <i18n-t
+          keypath="nav.title"
+          tag="h1"
           class="w-full text-6xl sm:text-[80px] leading-none text-balance mix"
         >
-          Das große
-          <span class="whitespace-nowrap font-bold">Golf-Wimmelbuch</span>
-        </h1>
+          <template #brand>
+            <span
+              :class="
+                cn('font-bold', {
+                  'whitespace-nowrap': locale === 'de',
+                })
+              "
+            >
+              {{ $t("nav.brand") }}
+            </span>
+          </template>
+        </i18n-t>
         <p class="duper text-4xl leading-[1.2] text-balance mix">
-          Das individuelle Merchandise für Ihren Club
+          {{ $t("hero.description") }}
         </p>
         <UButton
           to="#bestellen"
@@ -81,7 +93,7 @@ const { y } = useParallaxHeader({ speed: -3, opacity: 0.001 });
           variant="solid"
           color="secondary"
           icon="lucide:arrow-down"
-          >Jetzt bestellen</UButton
+          >{{ $t("hero.button") }}</UButton
         >
       </div>
     </div>

@@ -16,6 +16,15 @@ export const COUNTRY_OPTIONS = [
   "Anderes",
 ] as const;
 
+export type Country = (typeof COUNTRY_OPTIONS)[number];
+
+export const COUNTRY_I18N_KEYS: Record<Country, string> = {
+  Deutschland: "de",
+  Österreich: "at",
+  Schweiz: "ch",
+  Anderes: "other",
+};
+
 const TRAP_FIELD = "clubWebsite";
 
 export const FIELD_LIMITS = {
@@ -43,21 +52,35 @@ export interface RequestFormPayload {
   message?: string;
 }
 
+export type RequestFormErrorCode =
+  | "required"
+  | "maxLength"
+  | "invalidEmail"
+  | "invalidAuflage"
+  | "invalidCountry"
+  | "invalidRequest";
+
 export interface RequestFormValidationError {
   field: string;
-  message: string;
+  code: RequestFormErrorCode;
+  params?: { maxLength?: number };
+}
+
+interface FieldIssue {
+  code: RequestFormErrorCode;
+  params?: { maxLength?: number };
 }
 
 interface OptionalFieldResult {
   value?: string;
-  error?: string;
+  error?: FieldIssue;
 }
 
 function trimOptional(value: unknown, maxLength: number): OptionalFieldResult {
   const trimmed = String(value ?? "").trim();
   if (!trimmed) return {};
   if (trimmed.length > maxLength) {
-    return { error: `Maximal ${maxLength} Zeichen` };
+    return { error: { code: "maxLength", params: { maxLength } } };
   }
   return { value: trimmed };
 }
@@ -65,15 +88,16 @@ function trimOptional(value: unknown, maxLength: number): OptionalFieldResult {
 function requireField(
   value: unknown,
   field: string,
-  label: string,
   maxLength: number
 ): { value?: string; error?: RequestFormValidationError } {
   const trimmed = String(value ?? "").trim();
   if (!trimmed) {
-    return { error: { field, message: `${label} ist ein Pflichtfeld` } };
+    return { error: { field, code: "required" } };
   }
   if (trimmed.length > maxLength) {
-    return { error: { field, message: `Maximal ${maxLength} Zeichen` } };
+    return {
+      error: { field, code: "maxLength", params: { maxLength } },
+    };
   }
   return { value: trimmed };
 }
@@ -94,19 +118,14 @@ export function validateRequestForm(
   if (!data || typeof data !== "object") {
     return {
       success: false,
-      errors: [{ field: "form", message: "Ungültige Anfrage" }],
+      errors: [{ field: "form", code: "invalidRequest" }],
     };
   }
 
   const input = data as Record<string, unknown>;
   const errors: RequestFormValidationError[] = [];
 
-  const emailResult = requireField(
-    input.email,
-    "email",
-    "E-Mail",
-    FIELD_LIMITS.email
-  );
+  const emailResult = requireField(input.email, "email", FIELD_LIMITS.email);
   if (emailResult.error) {
     errors.push(emailResult.error);
   } else if (
@@ -114,47 +133,37 @@ export function validateRequestForm(
     !EMAIL_PATTERN.test(emailResult.value) ||
     emailResult.value.length > FIELD_LIMITS.email
   ) {
-    errors.push({ field: "email", message: "Ungültige E-Mail-Adresse" });
+    errors.push({ field: "email", code: "invalidEmail" });
   }
 
-  const nameResult = requireField(
-    input.name,
-    "name",
-    "Ansprechpartner",
-    FIELD_LIMITS.name
-  );
+  const nameResult = requireField(input.name, "name", FIELD_LIMITS.name);
   if (nameResult.error) errors.push(nameResult.error);
 
-  const clubResult = requireField(
-    input.club,
-    "club",
-    "Club",
-    FIELD_LIMITS.club
-  );
+  const clubResult = requireField(input.club, "club", FIELD_LIMITS.club);
   if (clubResult.error) errors.push(clubResult.error);
 
   const auflage = String(input.auflage ?? "").trim();
   if (!auflage) {
-    errors.push({ field: "auflage", message: "Auflage ist ein Pflichtfeld" });
+    errors.push({ field: "auflage", code: "required" });
   } else if (
     !AUFLAGE_OPTIONS.includes(auflage as (typeof AUFLAGE_OPTIONS)[number])
   ) {
-    errors.push({ field: "auflage", message: "Ungültige Auflage" });
+    errors.push({ field: "auflage", code: "invalidAuflage" });
   }
 
   const phoneResult = trimOptional(input.phone, FIELD_LIMITS.phone);
   if (phoneResult.error) {
-    errors.push({ field: "phone", message: phoneResult.error });
+    errors.push({ field: "phone", ...phoneResult.error });
   }
 
   const streetResult = trimOptional(input.street, FIELD_LIMITS.street);
   if (streetResult.error) {
-    errors.push({ field: "street", message: streetResult.error });
+    errors.push({ field: "street", ...streetResult.error });
   }
 
   const cityResult = trimOptional(input.city, FIELD_LIMITS.city);
   if (cityResult.error) {
-    errors.push({ field: "city", message: cityResult.error });
+    errors.push({ field: "city", ...cityResult.error });
   }
 
   const country = String(input.country ?? "").trim();
@@ -163,7 +172,7 @@ export function validateRequestForm(
     if (
       !COUNTRY_OPTIONS.includes(country as (typeof COUNTRY_OPTIONS)[number])
     ) {
-      errors.push({ field: "country", message: "Ungültiges Land" });
+      errors.push({ field: "country", code: "invalidCountry" });
     } else {
       countryValue = country;
     }
@@ -171,7 +180,7 @@ export function validateRequestForm(
 
   const messageResult = trimOptional(input.message, FIELD_LIMITS.message);
   if (messageResult.error) {
-    errors.push({ field: "message", message: messageResult.error });
+    errors.push({ field: "message", ...messageResult.error });
   }
 
   if (errors.length > 0) {
