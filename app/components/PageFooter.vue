@@ -8,7 +8,7 @@ const { locale, setLocale, locales } = useI18n();
     <div
       class="max-w-6xl w-full mx-auto px-5 md:px-10 flex flex-wrap items-center justify-between gap-2.5"
     >
-      <p class="leading-[1.4]">
+      <p class="text-sm leading-[1.4]">
         Copyright © {{ new Date().getFullYear() }}.
         <NuxtLink
           href="https://www.faust-kommunikation.de"
@@ -17,7 +17,7 @@ const { locale, setLocale, locales } = useI18n();
           >Faust Kommunikation KG</NuxtLink
         >. {{ $t("footer.copyright") }}
       </p>
-      <div class="flex flex-wrap items-center gap-2.5 justify-between">
+      <div class="flex flex-wrap items-center gap-5 justify-between text-sm">
         <NuxtLink
           v-if="route.path !== '/impressum'"
           href="https://www.faust-kommunikation.de/impressum"

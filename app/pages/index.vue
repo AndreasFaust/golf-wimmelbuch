@@ -36,19 +36,21 @@ const contentImages: { src: string; width: number; height: number }[] = [
     <PageHero />
     <section class="bg-white relative z-10">
       <div
-        class="max-w-6xl mx-auto p-5 md:p-10 rounded-3xl flex flex-col gap-10"
+        class="max-w-6xl mx-auto px-5 md:px-10 pt-10 pb-20 rounded-3xl flex flex-col gap-10"
       >
-        <div class="grid lg:grid-cols-3 gap-5 items-center">
+        <div
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 items-center mb-10"
+        >
           <p
-            class="duper text-3xl lg:text-4xl leading-tight text-balance mix grow lg:col-span-2"
+            class="duper text-2xl lg:text-4xl leading-tight text-balance mix grow lg:col-span-2"
           >
             {{ $t("preface.text") }}
           </p>
-          <div class="p-5 bg-blue-200 rounded-3xl">
+          <div class="p-5 bg-blue-200 rounded-3xl flex flex-col gap-2.5">
             <h2 class="text-2xl font-bold">
               {{ $t("preface.summary.title") }}
             </h2>
-            <ul :class="['text-xl', styling.list.ul]">
+            <ul :class="['text-lg lg:text-xl leading-[1.4]', styling.list.ul]">
               <li v-for="item in summaryItems" :key="item">
                 {{ item }}
               </li>

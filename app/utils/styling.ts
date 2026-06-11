@@ -12,8 +12,7 @@ export default {
       "[&>li]:pl-[1em] [&>li]:relative",
       "[&>li]:hyphenation",
       "[&>li]:before:absolute [&>li]:before:left-0",
-      "[&>li]:before:content-['•']",
-      "[&>li]:leading-[1.7rem] [&>li]:md:leading-[1.9rem] [&>li]:text-base [&>li]:md:text-xl"
+      "[&>li]:before:content-['•']"
     ),
     ol: cn(
       "hyphens-auto",
@@ -22,8 +21,7 @@ export default {
       "[&>li]:hyphenation",
       "[&>li]:before:absolute [&>li]:before:left-0",
       "[&>li]:before:content-[counter(list)_'.']",
-      "[&>li]:before:[counter-increment:list]",
-      "[&>li]:leading-[1.7rem] [&>li]:md:leading-[1.9rem] [&>li]:text-base [&>li]:md:text-xl"
+      "[&>li]:before:[counter-increment:list]"
     ),
   },
   headline: {

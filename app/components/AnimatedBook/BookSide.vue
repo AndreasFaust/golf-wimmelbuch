@@ -25,9 +25,9 @@ defineProps<{
       class="absolute inset-0 object-cover object-center h-full w-full"
       :src="image.url"
       :alt="image.alt ?? ''"
-      :sizes="sizes"
       :width="image.width"
       :height="image.height"
+      :sizes
     />
   </div>
 </template>

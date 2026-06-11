@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useIntersectionObserver } from "@vueuse/core";
+import { motion } from "motion-v";
+
 const { imagePosition = "left" } = defineProps<{
   title: string;
   description: string;
@@ -10,16 +13,37 @@ const { imagePosition = "left" } = defineProps<{
   };
   imagePosition?: "left" | "right";
 }>();
+
+const section = useTemplateRef("section");
+const visible = ref(false);
+
+useIntersectionObserver(
+  section,
+  ([entry]: IntersectionObserverEntry[]) => {
+    if (entry?.isIntersecting) visible.value = true;
+  },
+  { rootMargin: "-80px" }
+);
+
+const sizes = useSizes("max-sm:100vw max-lg:50vw 510px");
 </script>
 <template>
-  <div class="grid md:grid-cols-2 gap-10 items-center">
+  <motion.div
+    ref="section"
+    class="grid md:grid-cols-2 gap-10 items-center"
+    :initial="{ opacity: 0, y: 40 }"
+    :animate="visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }"
+    :transition="{ duration: 1, ease: 'easeOut' }"
+  >
     <div
       class="aspect-square overflow-hidden rounded-full relative"
       :class="[
-        imagePosition === 'left' ? 'order-1 -left-2.5' : 'order-2 -right-2.5',
+        imagePosition === 'left'
+          ? 'md:order-1 md:-left-2.5'
+          : 'md:order-2 md:-right-2.5',
       ]"
     >
-      <NuxtImg v-bind="image" class="w-full h-full object-cover" />
+      <NuxtImg v-bind="image" :sizes class="w-full h-full object-cover" />
     </div>
     <div
       class="flex flex-col gap-5"
@@ -28,9 +52,9 @@ const { imagePosition = "left" } = defineProps<{
       <h2 class="font-bold text-3xl leading-none text-balance mix">
         {{ title }}
       </h2>
-      <p class="text-xl leading-[1.4] text-balance mix">
+      <p class="text-lg sm:text-xl leading-[1.4] text-balance mix">
         {{ description }}
       </p>
     </div>
-  </div>
+  </motion.div>
 </template>

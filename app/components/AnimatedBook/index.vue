@@ -18,6 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
   initial: () => ({ x: 0, y: 0 }),
   animate: () => ({ x: 0, y: 0 }),
   start: true,
+  sizes: "100vw",
 });
 
 const container = useTemplateRef<HTMLDivElement>("container");
@@ -97,7 +98,7 @@ const topBottomTexture =
             :width="format.width"
             :height="format.height"
             :transform="`translate3d(${translate}) translate3d(0, 0, 0) rotateY(0deg)`"
-            :sizes="sizes"
+            :sizes
           />
           <BookSide
             v-if="back"
@@ -105,7 +106,7 @@ const topBottomTexture =
             :width="format.width"
             :height="format.height"
             :transform="`translate3d(${translate}) translate3d(0, 0, -${format.depth}px) rotateY(180deg)`"
-            :sizes="sizes"
+            :sizes
           />
           <BookSide
             v-if="spine"
