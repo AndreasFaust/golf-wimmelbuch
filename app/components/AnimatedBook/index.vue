@@ -32,6 +32,7 @@ const translate = useTranslate(format);
 const halfDepth = computed(() => format.value.depth / 2);
 
 const pause = ref(!props.rotate);
+const frontLoaded = ref(!props.front?.url);
 const x = useSpring(props.initial.x, props.spring);
 const y = useSpring(props.initial.y, props.spring);
 
@@ -70,6 +71,9 @@ const topBottomTexture =
     <motion.div
       class="h-full w-full flex justify-center items-center cursor-grab"
       :style="{ perspective: '1200px', ...(style ?? {}) }"
+      :initial="{ opacity: 0 }"
+      :animate="frontLoaded ? { opacity: 1 } : { opacity: 0 }"
+      :transition="{ duration: 0.6, ease: 'easeOut' }"
       :tabindex="-1"
       :drag="drag"
       :drag-constraints="{ left: 0, right: 0, top: 0, bottom: 0 }"
@@ -99,6 +103,7 @@ const topBottomTexture =
             :height="format.height"
             :transform="`translate3d(${translate}) translate3d(0, 0, 0) rotateY(0deg)`"
             :sizes
+            @load="frontLoaded = true"
           />
           <BookSide
             v-if="back"

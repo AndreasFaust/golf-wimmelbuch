@@ -8,11 +8,30 @@ defineProps<{
   image: BookImage;
   sizes?: string;
 }>();
+
+const emit = defineEmits<{
+  load: [];
+}>();
+
+const side = useTemplateRef("side");
+
+function notifyLoaded() {
+  emit("load");
+}
+
+onMounted(async () => {
+  await nextTick();
+  const image = side.value?.querySelector("img");
+  if (image?.complete) {
+    notifyLoaded();
+  }
+});
 </script>
 
 <template>
   <div
     v-if="image && image.url"
+    ref="side"
     class="absolute top-0 left-0 pointer-events-none"
     :style="{
       width: `${width}px`,
@@ -28,6 +47,8 @@ defineProps<{
       :width="image.width"
       :height="image.height"
       :sizes
+      @load="notifyLoaded"
+      @error="notifyLoaded"
     />
   </div>
 </template>
