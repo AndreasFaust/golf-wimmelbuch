@@ -14,18 +14,26 @@ const auxField = auxFieldKey();
 
 type Auflage = (typeof AUFLAGE_OPTIONS)[number];
 
-const state = reactive({
-  email: undefined as string | undefined,
-  name: undefined as string | undefined,
-  club: undefined as string | undefined,
-  phone: undefined as string | undefined,
-  message: undefined as string | undefined,
-  auflage: "100" as Auflage,
-  street: undefined as string | undefined,
-  city: undefined as string | undefined,
-  country: undefined as Country | undefined,
-  [auxField]: "",
-});
+function createInitialState() {
+  return {
+    email: undefined as string | undefined,
+    name: undefined as string | undefined,
+    club: undefined as string | undefined,
+    phone: undefined as string | undefined,
+    message: undefined as string | undefined,
+    auflage: "100" as Auflage,
+    street: undefined as string | undefined,
+    city: undefined as string | undefined,
+    country: undefined as Country | undefined,
+    [auxField]: "",
+  };
+}
+
+const state = reactive(createInitialState());
+
+function resetState() {
+  Object.assign(state, createInitialState());
+}
 
 const { t } = useI18n();
 
@@ -53,7 +61,7 @@ function validate(formState: Partial<Schema>): FormError[] {
 
 const toast = useToast();
 const isSubmitting = ref(false);
-const isSubmitted = ref(false);
+const showSuccessModal = ref(false);
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   isSubmitting.value = true;
@@ -64,7 +72,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       body: event.data,
     });
 
-    isSubmitted.value = true;
+    resetState();
+    showSuccessModal.value = true;
   } catch {
     toast.add({
       title: t("requestForm.error"),
@@ -78,12 +87,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <p v-if="isSubmitted" class="text-2xl text-balance mix">
-    {{ $t("requestForm.success") }}
-  </p>
-
   <UForm
-    v-else
     :validate="validate"
     :state="state"
     class="space-y-4 grid grid-cols-2 gap-x-10 gap-y-5 items-start"
@@ -215,4 +219,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       :disabled="isSubmitting"
     />
   </UForm>
+
+  <UModal
+    v-model:open="showSuccessModal"
+    :title="$t('requestForm.successTitle')"
+    :description="$t('requestForm.success')"
+  />
 </template>
