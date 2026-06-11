@@ -49,7 +49,7 @@ const sizes = useSizes("max-sm:100vw max-lg:50vw 510px");
       class="flex flex-col gap-5"
       :class="[imagePosition === 'left' ? 'md:order-2' : 'md:order-1']"
     >
-      <h2 class="font-bold text-3xl leading-none text-balance mix">
+      <h2 class="font-bold text-3xl lg:text-4xl leading-none text-balance mix">
         {{ title }}
       </h2>
       <p class="text-lg sm:text-xl leading-[1.4] text-balance mix">
