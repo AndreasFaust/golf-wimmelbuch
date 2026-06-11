@@ -5,11 +5,22 @@ interface TokenResponse {
   expires_in: number;
 }
 
-let cachedToken: { value: string; expiresAt: number } | null = null;
+interface CachedToken {
+  value: string;
+  expiresAt: number;
+}
+
+// Persisted via Nitro storage (fs-backed in dev, configured in nuxt.config.ts).
+// CleverReach rate-limits token issuance and returns 400 invalid_client if a
+// new token is requested while a previous one is still valid, so we MUST
+// reuse a cached token across HMR reloads and full server restarts.
+const TOKEN_STORAGE_KEY = "cleverreach:token";
 
 async function getAccessToken(clientId: string, clientSecret: string) {
-  if (cachedToken && cachedToken.expiresAt > Date.now()) {
-    return cachedToken.value;
+  const storage = useStorage<CachedToken>("cache");
+  const cached = await storage.getItem(TOKEN_STORAGE_KEY);
+  if (cached && cached.expiresAt > Date.now()) {
+    return cached.value;
   }
 
   const credentials = Buffer.from(`${clientId}:${clientSecret}`).toString(
@@ -19,24 +30,31 @@ async function getAccessToken(clientId: string, clientSecret: string) {
   const response = await fetch(`${API_URL}/oauth/token.php`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded",
+      Accept: "application/json",
       Authorization: `Basic ${credentials}`,
     },
-    body: JSON.stringify({ grant_type: "client_credentials" }),
+    body: new URLSearchParams({ grant_type: "client_credentials" }),
   });
 
   if (!response.ok) {
+    const body = await response.text().catch(() => "");
+    console.error(
+      `[CleverReach] OAuth token request failed (${response.status} ${response.statusText})`,
+      body,
+    );
     throw createError({
       statusCode: 502,
-      statusMessage: "CleverReach authentication failed",
+      statusMessage: `CleverReach authentication failed (${response.status})`,
+      data: { upstream: body },
     });
   }
 
   const data = (await response.json()) as TokenResponse;
-  cachedToken = {
+  await storage.setItem(TOKEN_STORAGE_KEY, {
     value: data.access_token,
     expiresAt: Date.now() + (data.expires_in - 60) * 1000,
-  };
+  });
 
   return data.access_token;
 }

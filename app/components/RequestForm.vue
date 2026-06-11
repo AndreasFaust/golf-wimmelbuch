@@ -224,5 +224,9 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     v-model:open="showSuccessModal"
     :title="$t('requestForm.successTitle')"
     :description="$t('requestForm.success')"
+    :ui="{
+      title: 'text-4xl text-balance mix',
+      description: 'text-xl text-balance mix',
+    }"
   />
 </template>

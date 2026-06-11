@@ -39,7 +39,7 @@
     }
   ],
   "requestForm": {
-    "title": "Request now",
+    "title": "Request a quote now (no obligation)",
     "required": "* Required field",
     "button": "Send",
     "successTitle": "Thank you!",

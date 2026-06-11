@@ -11,6 +11,15 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    storage: {
+      cache: {
+        driver: "fs",
+        base: "./.data/cache",
+      },
+    },
+  },
+
   modules: [
     "@nuxt/eslint",
     "@nuxt/hints",
@@ -33,6 +42,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     defaultLocale: "de",
+    strategy: "no_prefix",
     locales: [
       {
         code: "de",
