@@ -71,8 +71,8 @@ const topBottomTexture =
     <motion.div
       class="h-full w-full flex justify-center items-center cursor-grab"
       :style="{ perspective: '1200px', ...(style ?? {}) }"
-      :initial="{ opacity: 0 }"
-      :animate="frontLoaded ? { opacity: 1 } : { opacity: 0 }"
+      :initial="{ opacity: 0, y: 30 }"
+      :animate="frontLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }"
       :transition="{ duration: 0.6, ease: 'easeOut' }"
       :tabindex="-1"
       :drag="drag"
