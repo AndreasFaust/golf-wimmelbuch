@@ -12,7 +12,7 @@ const { imagePosition = "left" } = defineProps<{
 }>();
 </script>
 <template>
-  <div class="grid grid-cols-2 gap-10 items-center">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
     <div
       class="aspect-square overflow-hidden rounded-full relative"
       :class="[
@@ -23,7 +23,7 @@ const { imagePosition = "left" } = defineProps<{
     </div>
     <div
       class="flex flex-col gap-5"
-      :class="[imagePosition === 'left' ? 'order-2' : 'order-1']"
+      :class="[imagePosition === 'left' ? 'md:order-2' : 'md:order-1']"
     >
       <h2 class="font-bold text-3xl leading-none text-balance mix">
         {{ title }}

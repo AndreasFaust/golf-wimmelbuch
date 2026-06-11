@@ -90,7 +90,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   <UForm
     :validate="validate"
     :state="state"
-    class="space-y-4 grid grid-cols-2 gap-x-10 gap-y-5 items-start"
+    class="space-y-4 grid sm:grid-cols-2 gap-x-5 md:gap-x-10 gap-y-5 items-start"
     @submit="onSubmit"
   >
     <div
@@ -162,7 +162,9 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       />
     </UFormField>
 
-    <div class="col-span-2 grid grid-cols-4 gap-x-10 gap-y-5">
+    <div
+      class="sm:col-span-2 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-5 md:gap-x-10 gap-y-5"
+    >
       <UFormField :label="$t('requestForm.phone')" name="phone" size="xl">
         <UInput
           v-model="state.phone"

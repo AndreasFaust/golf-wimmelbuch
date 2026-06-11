@@ -25,7 +25,7 @@ useSeoMeta({
     <navigation
       class="fixed top-0 inset-x-0 z-20 bg-blue-100/90 backdrop-blur-sm border-b border-blue-200 h-12"
     >
-      <div class="max-w-6xl mx-auto px-10 flex items-center h-full">
+      <div class="max-w-6xl mx-auto px-5 md:px-10 flex items-center h-full">
         <i18n-t keypath="nav.title" tag="p" class="text-lg">
           <template #brand>
             <span class="whitespace-nowrap font-bold">

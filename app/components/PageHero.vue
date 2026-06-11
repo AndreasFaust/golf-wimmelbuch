@@ -8,7 +8,7 @@ const { locale } = useI18n();
     :style="{ y }"
     :class="[
       'relative',
-      'sm:h-[90svh] flex items-center overflow-hidden bg-contain bg-bottom bg-no-repeat',
+      'lg:h-[90svh] flex items-center overflow-hidden bg-contain bg-bottom bg-no-repeat',
       'bg-[url(/background.avif)]',
       'after:absolute after:inset-0 after:bg-linear-to-b after:from-blue-100 after:to-transparent after:z-10',
     ]"
@@ -16,13 +16,13 @@ const { locale } = useI18n();
     <div
       :class="
         cn(
-          'relative z-20 max-w-6xl mx-auto grid sm:grid-cols-5 px-10 gap-10 md:gap-20 items-center mb-[5svh]',
-          'max-sm:py-20'
+          'relative z-20 max-w-6xl mx-auto grid lg:grid-cols-5 px-5 md:px-10 gap-10 md:gap-20 items-center mb-[5svh]',
+          'max-lg:py-20'
         )
       "
     >
       <AnimatedBook
-        class="max-sm:w-1/2 sm:col-span-2"
+        class="max-lg:w-1/2 lg:col-span-2"
         :front="{
           url: '/wimmelbuch-front.jpg',
           alt: 'Title',
@@ -51,20 +51,20 @@ const { locale } = useI18n();
         :animate="{ x: 0, y: 0 }"
         :start="true"
       />
-      <div class="relative flex flex-col gap-5 sm:gap-10 sm:col-span-3">
+      <div class="relative flex flex-col gap-5 lg:gap-10 lg:col-span-3">
         <NuxtImg
           src="/bird.png"
           alt="Bird"
           width="310"
           height="261"
-          class="w-28 absolute -top-10 max-sm:right-0 sm:-top-45 sm:left-20"
+          class="w-28 absolute -top-10 max-lg:right-0 lg:-top-45 lg:left-20"
         />
         <NuxtImg
           src="/balloon.png"
           alt="Balloon"
           width="284"
           height="385"
-          class="w-24 absolute max-sm:-top-full sm:-top-30 right-20"
+          class="w-24 absolute max-lg:-top-full lg:-top-30 right-20"
         />
         <i18n-t
           keypath="nav.title"
@@ -75,7 +75,7 @@ const { locale } = useI18n();
             <span
               :class="
                 cn('font-bold', {
-                  'whitespace-nowrap': locale === 'de',
+                  'lg:whitespace-nowrap': locale === 'de',
                 })
               "
             >

@@ -35,10 +35,12 @@ const contentImages: { src: string; width: number; height: number }[] = [
   <div class="overflow-hidden">
     <PageHero />
     <section class="bg-white relative z-10">
-      <div class="max-w-6xl mx-auto p-10 rounded-3xl flex flex-col gap-10">
-        <div class="grid grid-cols-3 gap-5 items-center">
+      <div
+        class="max-w-6xl mx-auto p-5 md:p-10 rounded-3xl flex flex-col gap-10"
+      >
+        <div class="grid lg:grid-cols-3 gap-5 items-center">
           <p
-            class="duper text-4xl leading-tight text-balance mix grow col-span-2"
+            class="duper text-3xl lg:text-4xl leading-tight text-balance mix grow lg:col-span-2"
           >
             {{ $t("preface.text") }}
           </p>
@@ -67,8 +69,10 @@ const contentImages: { src: string; width: number; height: number }[] = [
       id="bestellen"
       class="bg-blue-50 border-t border-blue-200 relative z-10"
     >
-      <div class="max-w-6xl mx-auto p-10 rounded-3xl flex flex-col gap-10">
-        <div class="flex items-baseline gap-5">
+      <div
+        class="max-w-6xl mx-auto px-5 md:px-10 py-10 rounded-3xl flex flex-col gap-5 md:gap-10"
+      >
+        <div class="flex max-md:flex-col items-baseline gap-5">
           <h2 class="font-bold text-4xl leading-none text-balance mix">
             {{ $t("requestForm.title") }}
           </h2>

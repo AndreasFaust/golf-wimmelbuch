@@ -4,9 +4,9 @@ const { locale, setLocale, locales } = useI18n();
 </script>
 
 <template>
-  <footer class="bg-blue-100 h-24 border-t border-blue-200 flex items-center">
+  <footer class="bg-blue-100 py-10 border-t border-blue-200 flex items-center">
     <div
-      class="max-w-6xl w-full mx-auto px-10 flex items-center justify-between gap-2.5"
+      class="max-w-6xl w-full mx-auto px-5 md:px-10 flex flex-wrap items-center justify-between gap-2.5"
     >
       <p class="leading-[1.4]">
         Copyright © {{ new Date().getFullYear() }}.
@@ -17,7 +17,7 @@ const { locale, setLocale, locales } = useI18n();
           >Faust Kommunikation KG</NuxtLink
         >. {{ $t("footer.copyright") }}
       </p>
-      <div class="flex items-center gap-2.5 justify-between">
+      <div class="flex flex-wrap items-center gap-2.5 justify-between">
         <NuxtLink
           v-if="route.path !== '/impressum'"
           href="https://www.faust-kommunikation.de/impressum"
