@@ -59,6 +59,7 @@ const sizes = useSizes("max-sm:60vw max-lg:50vw max-xl:60vw max-lg:50vw 380px");
           alt="Bird"
           width="310"
           height="261"
+          sizes="112px"
           class="w-28 absolute z-0 -top-24 max-lg:right-0 lg:-top-45 lg:left-20"
         />
         <NuxtImg
@@ -66,6 +67,7 @@ const sizes = useSizes("max-sm:60vw max-lg:50vw max-xl:60vw max-lg:50vw 380px");
           alt="Balloon"
           width="284"
           height="385"
+          sizes="96px"
           class="max-sm:hidden w-24 absolute max-lg:-top-full lg:-top-30 right-20"
         />
         <i18n-t
