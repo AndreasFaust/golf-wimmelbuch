@@ -2,13 +2,21 @@ import {
   isAutomatedSubmission,
   validateRequestForm,
 } from "#shared/request-form";
-import { submitRequestToCleverReach } from "../utils/cleverreach";
+import {
+  sendConfirmationEmail,
+  sendOperatorNotification,
+  type EmailLocale,
+} from "../utils/email";
 import { enforceRateLimit } from "../utils/rate-limit";
 
 const RATE_LIMIT = {
   max: 5,
   windowMs: 15 * 60 * 1000,
 };
+
+function resolveLocale(value: unknown): EmailLocale {
+  return value === "en" ? "en" : "de";
+}
 
 export default defineEventHandler(async (event) => {
   const ip = getRequestIP(event, { xForwardedFor: true }) ?? "unknown";
@@ -29,20 +37,23 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const config = useRuntimeConfig(event);
-  const { clientId, clientSecret, groupId } = config.cleverreach;
+  const locale = resolveLocale(
+    (body as Record<string, unknown> | null)?.locale,
+  );
 
-  if (!clientId || !clientSecret || !groupId) {
-    throw createError({
-      statusCode: 500,
-      statusMessage: "CleverReach ist nicht konfiguriert",
-    });
+  const config = useRuntimeConfig(event);
+
+  try {
+    await sendConfirmationEmail(config.smtp, result.data, locale);
+  } catch (error) {
+    console.error("[email] Failed to send confirmation email", error);
   }
 
-  await submitRequestToCleverReach(
-    { clientId, clientSecret, groupId },
-    result.data,
-  );
+  try {
+    await sendOperatorNotification(config.smtp, result.data);
+  } catch (error) {
+    console.error("[email] Failed to send operator notification", error);
+  }
 
   return { success: true };
 });

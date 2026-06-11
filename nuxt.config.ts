@@ -4,19 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   runtimeConfig: {
-    cleverreach: {
-      clientId: "",
-      clientSecret: "",
-      groupId: "",
-    },
-  },
-
-  nitro: {
-    storage: {
-      cache: {
-        driver: "fs",
-        base: "./.data/cache",
-      },
+    smtp: {
+      host: "",
+      port: "587",
+      secure: "false",
+      user: "",
+      password: "",
+      from: "",
     },
   },
 

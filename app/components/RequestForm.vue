@@ -35,7 +35,7 @@ function resetState() {
   Object.assign(state, createInitialState());
 }
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const countryItems = computed(() =>
   COUNTRY_OPTIONS.map((value) => ({
@@ -69,7 +69,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   try {
     await $fetch("/api/request", {
       method: "POST",
-      body: event.data,
+      body: { ...event.data, locale: locale.value },
     });
 
     resetState();
@@ -225,8 +225,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     :title="$t('requestForm.successTitle')"
     :description="$t('requestForm.success')"
     :ui="{
-      title: 'text-4xl text-balance mix',
-      description: 'text-xl text-balance mix',
+      title: 'text-6xl text-balance mix',
+      description: 'text-2xl text-balance mix',
     }"
   />
 </template>
