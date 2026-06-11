@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Den store golf find-og-se-bog",
+    "description": "Denne farverige golf find-og-se-bog viser børn de smukkeste sider af sporten. Sjove historier, sympatiske figurer og levende illustrationer gør golf til et rigtigt eventyr for de mindste."
+  },
+  "hero": {
+    "title": "Den store golf find-og-se-bog",
+    "description": "Det individuelle merchandise til jeres klub",
+    "button": "Anmod nu"
+  },
+  "nav": {
+    "title": "Den store {brand}",
+    "brand": "Golf find-og-se-bog"
+  },
+  "preface": {
+    "text": "Hvordan bringer man børnehavebørn tættere på golfens verden? Med farverige find-og-se-bøger! Sjove historier, sympatiske figurer og levende illustrationer gør sporten til et rigtigt eventyr for de mindste.",
+    "summary": {
+      "title": "Bogen på et blik",
+      "items": [
+        "14 håndillustrerede sider",
+        "Individuel tilpasning til jeres klub og sponsorer",
+        "Stort format (260 x 375 mm, lignende A3)",
+        "Solid pap og høj kvalitet"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Hvorfor en find-og-se-bog?",
+      "description": "Find-og-se-bogen viser børn de smukkeste sider af golf. De farverige billeder er sympatiske og alderssvarende. De er fulde af sjove og kuriøse historier og vækker lysten til selv at prøve sporten."
+    },
+    {
+      "title": "Én bog, mange muligheder",
+      "description": "Uanset om det er merchandise i klubshoppen, en hjertelig velkomstgave til nye medlemmer og gæster eller underholdning på børnelægekontorer – find-og-se-bogen er et alsidigt visitkort for klubben og golfen. Og det bedste: indtægterne fra salget kan gå direkte til ungdomsarbejdet."
+    },
+    {
+      "title": "Skræddersyet til jeres klub",
+      "description": "Jeres håndtegnede klubhus eller en markant særegenhed på jeres bane pryder forsiden. Jeres sponsorer kan forevige sig på bagsiden og aktivt støtte projektet."
+    }
+  ],
+  "requestForm": {
+    "title": "Anmod om tilbud uden forpligtelse",
+    "required": "* Obligatorisk felt",
+    "button": "Send",
+    "successTitle": "Tak!",
+    "success": "Din forespørgsel er sendt. Vi kontakter dig snart.",
+    "error": "Fejl",
+    "errorMessage": "Din forespørgsel kunne ikke sendes. Prøv igen senere.",
+    "email": "E-mail*",
+    "name": "Kontaktperson*",
+    "club": "Klubbens navn*",
+    "auflage": "Muligt oplag*",
+    "phone": "Telefon",
+    "street": "Gade / Husnummer",
+    "city": "Postnummer / By",
+    "country": "Land",
+    "countries": {
+      "de": "Tyskland",
+      "at": "Østrig",
+      "ch": "Schweiz",
+      "bg": "Bulgarien",
+      "da": "Danmark",
+      "et": "Estland",
+      "fi": "Finland",
+      "fr": "Frankrig",
+      "el": "Grækenland",
+      "it": "Italien",
+      "hr": "Kroatien",
+      "lv": "Letland",
+      "lt": "Litauen",
+      "nl": "Nederlandene",
+      "nb": "Norge",
+      "pl": "Polen",
+      "pt": "Portugal",
+      "ro": "Rumænien",
+      "sv": "Sverige",
+      "sk": "Slovakiet",
+      "sl": "Slovenien",
+      "es": "Spanien",
+      "cs": "Tjekkiet",
+      "hu": "Ungarn",
+      "other": "Andet"
+    },
+    "message": "Yderligere besked",
+    "fields": {
+      "email": "E-mail",
+      "name": "Kontaktperson",
+      "club": "Klub",
+      "auflage": "Oplag",
+      "country": "Land",
+      "form": "Formular"
+    },
+    "errors": {
+      "required": "{field} er påkrævet",
+      "maxLength": "Højst {maxLength} tegn",
+      "invalidEmail": "Ugyldig e-mailadresse",
+      "invalidAuflage": "Ugyldigt oplag",
+      "invalidCountry": "Ugyldigt land",
+      "invalidRequest": "Ugyldig forespørgsel"
+    }
+  },
+  "footer": {
+    "copyright": "Alle rettigheder forbeholdes.",
+    "privacy": "Privatliv",
+    "imprint": "Impressum"
+  }
+}

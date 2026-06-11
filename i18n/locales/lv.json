@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Lielā golfa meklē un atrod grāmata",
+    "description": "Šī krāsainā golfa meklē un atrod grāmata bērniem parāda skaistākās šī sporta puses. Jautri stāsti, simpātiski tēli un košas ilustrācijas padara golfu par īstu piedzīvojumu mazajiem."
+  },
+  "hero": {
+    "title": "Lielā golfa meklē un atrod grāmata",
+    "description": "Individuāla prece jūsu klubam",
+    "button": "Pieprasīt tagad"
+  },
+  "nav": {
+    "title": "Lielā {brand}",
+    "brand": "Golfa meklē un atrod grāmata"
+  },
+  "preface": {
+    "text": "Kā pietuvināt pirmsskolas vecuma bērniem golfa pasauli? Ar krāsainām meklē un atrod grāmatām! Jautri stāsti, simpātiski tēli un košas ilustrācijas padara sportu par īstu piedzīvojumu mazajiem.",
+    "summary": {
+      "title": "Grāmata īsumā",
+      "items": [
+        "14 ar roku ilustrētas lapas",
+        "Individuāla pielāgošana jūsu klubam un sponsoriem",
+        "Liels formāts (260 x 375 mm, līdzīgs A3)",
+        "Stabils kartons un augstas kvalitātes apdare"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Kāpēc meklē un atrod grāmata?",
+      "description": "Meklē un atrod grāmata bērniem parāda skaistākās golfa puses. Krāsainās ilustrācijas ir simpātiskas un piemērotas vecumam. Tās ir pilnas jautru un dīvainu stāstu un roda vēlmi pašiem izmēģināt sportu."
+    },
+    {
+      "title": "Viena grāmata, daudzas iespējas",
+      "description": "Neatkarīgi no tā, vai tā ir prece kluba veikalā, sirsnīgs sveiciens jaunajiem biedriem un viesiem vai izklaide bērnu ārstu kabinetos – meklē un atrod grāmata ir daudzpusīga kluba un golfa vizītkarte. Un vissvarīgākais: ieņēmumi no pārdošanas var nonākt tieši jaunatnes darbā."
+    },
+    {
+      "title": "Pielāgota jūsu klubam",
+      "description": "Jūsu ar roku zīmētais kluba nams vai izteiksmīga jūsu laukuma iezīme rotā vāku. Sponsori var iemūžināt sevi aizmugurē un aktīvi atbalstīt projektu."
+    }
+  ],
+  "requestForm": {
+    "title": "Pieprasīt piedāvājumu bez saistībām",
+    "required": "* Obligāts lauks",
+    "button": "Sūtīt",
+    "successTitle": "Paldies!",
+    "success": "Jūsu pieprasījums ir veiksmīgi nosūtīts. Drīz ar jums sazināsimies.",
+    "error": "Kļūda",
+    "errorMessage": "Neizdevās nosūtīt pieprasījumu. Lūdzu, mēģiniet vēlāk.",
+    "email": "E-pasts*",
+    "name": "Kontaktpersona*",
+    "club": "Kluba nosaukums*",
+    "auflage": "Iespējamais tirāža*",
+    "phone": "Tālrunis",
+    "street": "Iela / Mājas numurs",
+    "city": "Pasta indekss / Pilsēta",
+    "country": "Valsts",
+    "countries": {
+      "de": "Vācija",
+      "at": "Austrija",
+      "ch": "Šveice",
+      "bg": "Bulgārija",
+      "da": "Dānija",
+      "et": "Igaunija",
+      "fi": "Somija",
+      "fr": "Francija",
+      "el": "Grieķija",
+      "it": "Itālija",
+      "hr": "Horvātija",
+      "lv": "Latvija",
+      "lt": "Lietuva",
+      "nl": "Nīderlande",
+      "nb": "Norvēģija",
+      "pl": "Polija",
+      "pt": "Portugāle",
+      "ro": "Rumānija",
+      "sv": "Zviedrija",
+      "sk": "Slovākija",
+      "sl": "Slovēnija",
+      "es": "Spānija",
+      "cs": "Čehija",
+      "hu": "Ungārija",
+      "other": "Cita"
+    },
+    "message": "Papildu ziņojums",
+    "fields": {
+      "email": "E-pasts",
+      "name": "Kontaktpersona",
+      "club": "Klubs",
+      "auflage": "Tirāža",
+      "country": "Valsts",
+      "form": "Veidlapa"
+    },
+    "errors": {
+      "required": "{field} ir obligāts",
+      "maxLength": "Maksimums {maxLength} rakstzīmes",
+      "invalidEmail": "Nederīga e-pasta adrese",
+      "invalidAuflage": "Nederīgs tirāža",
+      "invalidCountry": "Nederīga valsts",
+      "invalidRequest": "Nederīgs pieprasījums"
+    }
+  },
+  "footer": {
+    "copyright": "Visas tiesības aizsargātas.",
+    "privacy": "Privātums",
+    "imprint": "Impressum"
+  }
+}

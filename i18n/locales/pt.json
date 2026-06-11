@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "O grande livro de Procura e Encontra de Golfe",
+    "description": "Este colorido livro de Procura e Encontra sobre golfe apresenta às crianças os melhores aspetos do desporto. Histórias divertidas, personagens simpáticos e ilustrações vibrantes transformam o golfe numa verdadeira aventura para os mais pequenos."
+  },
+  "hero": {
+    "title": "O grande livro de Procura e Encontra de Golfe",
+    "description": "O merchandising personalizado para o seu clube",
+    "button": "Pedir agora"
+  },
+  "nav": {
+    "title": "O grande {brand}",
+    "brand": "Livro de Procura e Encontra de Golfe"
+  },
+  "preface": {
+    "text": "Como aproximar as crianças em idade pré-escolar do mundo do golfe? Com livros de Procura e Encontra coloridos! Histórias divertidas, personagens simpáticos e ilustrações vibrantes transformam o desporto numa verdadeira aventura para os mais pequenos.",
+    "summary": {
+      "title": "O livro em resumo",
+      "items": [
+        "14 páginas ilustradas à mão",
+        "Adaptação individual ao seu clube e patrocinadores",
+        "Grande formato (260 x 375 mm, semelhante a A3)",
+        "Cartão resistente e acabamento de alta qualidade"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Porquê um livro de Procura e Encontra?",
+      "description": "O livro de Procura e Encontra apresenta às crianças os melhores aspetos do golfe. As ilustrações coloridas são simpáticas e adequadas à idade. Estão cheias de histórias engraçadas e curiosas e despertam o desejo de experimentar o desporto por si próprias."
+    },
+    {
+      "title": "Um livro, muitas possibilidades",
+      "description": "Seja como merchandising na loja do clube, como presente de boas-vindas para novos membros e convidados, ou como passatempo em consultórios pediátricos – o livro de Procura e Encontra é uma montra versátil para o clube e o golfe. E o melhor: as receitas da venda podem fluir diretamente para o trabalho com os jovens."
+    },
+    {
+      "title": "Feito à medida do seu clube",
+      "description": "O seu clube-house desenhado à mão ou uma particularidade marcante do seu campo adorna a capa. Os seus patrocinadores podem eternizar-se no verso e apoiar ativamente o projeto."
+    }
+  ],
+  "requestForm": {
+    "title": "Pedir orçamento sem compromisso",
+    "required": "* Campo obrigatório",
+    "button": "Enviar",
+    "successTitle": "Obrigado!",
+    "success": "O seu pedido foi enviado com sucesso. Entraremos em contacto em breve.",
+    "error": "Erro",
+    "errorMessage": "Não foi possível enviar o seu pedido. Tente novamente mais tarde.",
+    "email": "E-mail*",
+    "name": "Pessoa de contacto*",
+    "club": "Nome do clube*",
+    "auflage": "Tiragem possível*",
+    "phone": "Telefone",
+    "street": "Rua / Número",
+    "city": "Código postal / Localidade",
+    "country": "País",
+    "countries": {
+      "de": "Alemanha",
+      "at": "Áustria",
+      "ch": "Suíça",
+      "bg": "Bulgária",
+      "da": "Dinamarca",
+      "et": "Estónia",
+      "fi": "Finlândia",
+      "fr": "França",
+      "el": "Grécia",
+      "it": "Itália",
+      "hr": "Croácia",
+      "lv": "Letónia",
+      "lt": "Lituânia",
+      "nl": "Países Baixos",
+      "nb": "Noruega",
+      "pl": "Polónia",
+      "pt": "Portugal",
+      "ro": "Roménia",
+      "sv": "Suécia",
+      "sk": "Eslováquia",
+      "sl": "Eslovénia",
+      "es": "Espanha",
+      "cs": "Chéquia",
+      "hu": "Hungria",
+      "other": "Outro"
+    },
+    "message": "Mensagem adicional",
+    "fields": {
+      "email": "E-mail",
+      "name": "Pessoa de contacto",
+      "club": "Clube",
+      "auflage": "Tiragem",
+      "country": "País",
+      "form": "Formulário"
+    },
+    "errors": {
+      "required": "{field} é obrigatório",
+      "maxLength": "Máximo de {maxLength} caracteres",
+      "invalidEmail": "Endereço de e-mail inválido",
+      "invalidAuflage": "Tiragem inválida",
+      "invalidCountry": "País inválido",
+      "invalidRequest": "Pedido inválido"
+    }
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados.",
+    "privacy": "Privacidade",
+    "imprint": "Impressum"
+  }
+}

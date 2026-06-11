@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "A nagy golf keresd meg könyv",
+    "description": "Ez a színes golf keresd meg könyv a sport legszebb oldalait mutatja be a gyerekeknek. Vicces történetek, szimpatikus figurák és élénk illusztrációk valódi kalanddá teszik a golfot a legkisebbek számára."
+  },
+  "hero": {
+    "title": "A nagy golf keresd meg könyv",
+    "description": "Egyedi merchandising az Ön klubjához",
+    "button": "Ajánlatkérés most"
+  },
+  "nav": {
+    "title": "A nagy {brand}",
+    "brand": "Golf keresd meg könyv"
+  },
+  "preface": {
+    "text": "Hogyan közelítsük meg az óvodáskorú gyerekeknek a golf világát? Színes keresd meg könyvekkel! Vicces történetek, szimpatikus figurák és élénk illusztrációk valódi kalanddá teszik a sportot a legkisebbek számára.",
+    "summary": {
+      "title": "A könyv röviden",
+      "items": [
+        "14 kézzel illusztrált oldal",
+        "Egyedi igazítás klubjához és szponzoraihoz",
+        "Nagy formátum (260 x 375 mm, A3-hoz hasonló)",
+        "Masszív karton és kiváló minőségű kivitelezés"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Miért keresd meg könyv?",
+      "description": "A keresd meg könyv a golf legszebb oldalait mutatja be a gyerekeknek. A színes képek szimpatikusak és korosztályuknak megfelelőek. Tele vannak vicces és különös történetekkel, és felébresztik a vágyat, hogy maguk is kipróbálják a sportot."
+    },
+    {
+      "title": "Egy könyv, sok lehetőség",
+      "description": "Legyen szó klubbolti merchandisingről, szívélyes üdvözlő ajándékról új tagoknak és vendégeknek, vagy szórakozásról gyermekorvosi rendelőkben – a keresd meg könyv sokoldalú reklám a klub és a golf számára. És ami a legjobb: az eladásból származó bevétel közvetlenül a ifjúsági munkába mehet."
+    },
+    {
+      "title": "Az Ön klubjára szabva",
+      "description": "A kézzel rajzolt klubház vagy a pálya jellegzetes vonása díszíti a címlapot. Szponzorai a hátoldalon örökíthetik meg magukat és aktívan támogathatják a projektet."
+    }
+  ],
+  "requestForm": {
+    "title": "Ajánlatkérés kötelezettség nélkül",
+    "required": "* Kötelező mező",
+    "button": "Küldés",
+    "successTitle": "Köszönjük!",
+    "success": "Ajánlatkérését sikeresen elküldtük. Hamarosan felvesszük Önnel a kapcsolatot.",
+    "error": "Hiba",
+    "errorMessage": "Az ajánlatkérés elküldése sikertelen. Kérjük, próbálja újra később.",
+    "email": "E-mail*",
+    "name": "Kapcsolattartó*",
+    "club": "Klub neve*",
+    "auflage": "Lehetséges példányszám*",
+    "phone": "Telefon",
+    "street": "Utca / Házszám",
+    "city": "Irányítószám / Város",
+    "country": "Ország",
+    "countries": {
+      "de": "Németország",
+      "at": "Ausztria",
+      "ch": "Svájc",
+      "bg": "Bulgária",
+      "da": "Dánia",
+      "et": "Észtország",
+      "fi": "Finnország",
+      "fr": "Franciaország",
+      "el": "Görögország",
+      "it": "Olaszország",
+      "hr": "Horvátország",
+      "lv": "Lettország",
+      "lt": "Litvánia",
+      "nl": "Hollandia",
+      "nb": "Norvégia",
+      "pl": "Lengyelország",
+      "pt": "Portugália",
+      "ro": "Románia",
+      "sv": "Svédország",
+      "sk": "Szlovákia",
+      "sl": "Szlovénia",
+      "es": "Spanyolország",
+      "cs": "Csehország",
+      "hu": "Magyarország",
+      "other": "Egyéb"
+    },
+    "message": "További üzenet",
+    "fields": {
+      "email": "E-mail",
+      "name": "Kapcsolattartó",
+      "club": "Klub",
+      "auflage": "Példányszám",
+      "country": "Ország",
+      "form": "Űrlap"
+    },
+    "errors": {
+      "required": "A(z) {field} kötelező",
+      "maxLength": "Legfeljebb {maxLength} karakter",
+      "invalidEmail": "Érvénytelen e-mail cím",
+      "invalidAuflage": "Érvénytelen példányszám",
+      "invalidCountry": "Érvénytelen ország",
+      "invalidRequest": "Érvénytelen kérés"
+    }
+  },
+  "footer": {
+    "copyright": "Minden jog fenntartva.",
+    "privacy": "Adatvédelem",
+    "imprint": "Impressum"
+  }
+}

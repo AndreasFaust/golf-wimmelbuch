@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Marea carte de golf Caută și găsește",
+    "description": "Această carte colorată de golf Caută și găsește le prezintă copiilor cele mai frumoase aspecte ale sportului. Povești amuzante, personaje simpatice și ilustrații vibrante transformă golful într-o adevărată aventură pentru cei mici."
+  },
+  "hero": {
+    "title": "Marea carte de golf Caută și găsește",
+    "description": "Merchandising personalizat pentru clubul dumneavoastră",
+    "button": "Solicitați acum"
+  },
+  "nav": {
+    "title": "Marea {brand}",
+    "brand": "Carte de golf Caută și găsește"
+  },
+  "preface": {
+    "text": "Cum apropiați copiii de vârstă preșcolară de lumea golfului? Cu cărți colorate Caută și găsește! Povești amuzante, personaje simpatice și ilustrații vibrante transformă sportul într-o adevărată aventură pentru cei mici.",
+    "summary": {
+      "title": "Cartea pe scurt",
+      "items": [
+        "14 pagini ilustrate manual",
+        "Adaptare individuală clubului și sponsorilor dumneavoastră",
+        "Format mare (260 x 375 mm, similar A3)",
+        "Carton rezistent și finisaj de înaltă calitate"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "De ce o carte Caută și găsește?",
+      "description": "Cartea Caută și găsește le prezintă copiilor cele mai frumoase aspecte ale golfului. Ilustrațiile colorate sunt simpatice și adaptate vârstei. Sunt pline de povești amuzante și curioase și trezesc dorința de a încerca sportul singuri."
+    },
+    {
+      "title": "O carte, multe posibilități",
+      "description": "Fie ca merchandise în shop-ul clubului, cadou de bun venit pentru noii membri și oaspeți sau distracție în cabinetele pediatrice – cartea Caută și găsește este o vitrină versatilă pentru club și golf. Și cel mai bine: veniturile din vânzări pot merge direct către munca cu tineretul."
+    },
+    {
+      "title": "Personalizată pentru clubul dumneavoastră",
+      "description": "Club house-ul desenat manual sau o particularitate remarcabilă a terenului dumneavoastră împodobește coperta. Sponsorii se pot înscrie pe verso și pot sprijini activ proiectul."
+    }
+  ],
+  "requestForm": {
+    "title": "Solicitați ofertă fără obligații",
+    "required": "* Câmp obligatoriu",
+    "button": "Trimite",
+    "successTitle": "Mulțumim!",
+    "success": "Solicitarea dumneavoastră a fost trimisă cu succes. Vă vom contacta în curând.",
+    "error": "Eroare",
+    "errorMessage": "Solicitarea nu a putut fi trimisă. Vă rugăm să încercați din nou mai târziu.",
+    "email": "E-mail*",
+    "name": "Persoană de contact*",
+    "club": "Numele clubului*",
+    "auflage": "Tiraj posibil*",
+    "phone": "Telefon",
+    "street": "Stradă / Număr",
+    "city": "Cod poștal / Oraș",
+    "country": "Țară",
+    "countries": {
+      "de": "Germania",
+      "at": "Austria",
+      "ch": "Elveția",
+      "bg": "Bulgaria",
+      "da": "Danemarca",
+      "et": "Estonia",
+      "fi": "Finlanda",
+      "fr": "Franța",
+      "el": "Grecia",
+      "it": "Italia",
+      "hr": "Croația",
+      "lv": "Letonia",
+      "lt": "Lituania",
+      "nl": "Țările de Jos",
+      "nb": "Norvegia",
+      "pl": "Polonia",
+      "pt": "Portugalia",
+      "ro": "România",
+      "sv": "Suedia",
+      "sk": "Slovacia",
+      "sl": "Slovenia",
+      "es": "Spania",
+      "cs": "Cehia",
+      "hu": "Ungaria",
+      "other": "Alta"
+    },
+    "message": "Mesaj suplimentar",
+    "fields": {
+      "email": "E-mail",
+      "name": "Persoană de contact",
+      "club": "Club",
+      "auflage": "Tiraj",
+      "country": "Țară",
+      "form": "Formular"
+    },
+    "errors": {
+      "required": "{field} este obligatoriu",
+      "maxLength": "Maximum {maxLength} caractere",
+      "invalidEmail": "Adresă de e-mail invalidă",
+      "invalidAuflage": "Tiraj invalid",
+      "invalidCountry": "Țară invalidă",
+      "invalidRequest": "Solicitare invalidă"
+    }
+  },
+  "footer": {
+    "copyright": "Toate drepturile rezervate.",
+    "privacy": "Confidențialitate",
+    "imprint": "Impressum"
+  }
+}

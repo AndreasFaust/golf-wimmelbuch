@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Velika golfova knjiga Poišči in najdi",
+    "description": "Ta pisana golfova knjiga Poišči in najdi otrokom predstavi najlepše plati tega športa. Zabavne zgodbe, simpatični liki in živahne ilustracije golf spremenijo v pravo pustolovščino za najmlajše."
+  },
+  "hero": {
+    "title": "Velika golfova knjiga Poišči in najdi",
+    "description": "Individualni merchandising za vaš klub",
+    "button": "Povprašajte zdaj"
+  },
+  "nav": {
+    "title": "Velika {brand}",
+    "brand": "Golfova knjiga Poišči in najdi"
+  },
+  "preface": {
+    "text": "Kako predšolskim otrokom približati svet golfa? S pisanimi knjigami Poišči in najdi! Zabavne zgodbe, simpatični liki in živahne ilustracije šport spremenijo v pravo pustolovščino za najmlajše.",
+    "summary": {
+      "title": "Knjiga na kratko",
+      "items": [
+        "14 ročno ilustriranih strani",
+        "Individualna prilagoditev vašemu klubu in sponzorjem",
+        "Velik format (260 x 375 mm, podobno A3)",
+        "Trden karton in visokokakovostna izdelava"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Zakaj knjiga Poišči in najdi?",
+      "description": "Knjiga Poišči in najdi otrokom predstavi najlepše plati golfa. Pisane ilustracije so simpatične in starosti primerno oblikovane. Polne so zabavnih in nenavadnih zgodb in prebudijo željo, da šport sami preizkusijo."
+    },
+    {
+      "title": "Ena knjiga, veliko možnosti",
+      "description": "Naj bo to merchandising v klubski trgovini, srdačno darilo dobrodošlice novim članom in gostom ali zabava v pediatričnih ambulantah – knjiga Poišči in najdi je vsestranska vizitka kluba in golfa. In najboljše: prihodki od prodaje lahko neposredno tečejo v delo z mladimi."
+    },
+    {
+      "title": "Po meri vašega kluba",
+      "description": "Vaš ročno narisan klubski dom ali izrazita značilnost vašega igrišča krasi naslovnico. Vaši sponzorji se lahko zapišejo na hrbtni strani in aktivno podpirajo projekt."
+    }
+  ],
+  "requestForm": {
+    "title": "Neobvezujoča povpraševanje zdaj",
+    "required": "* Obvezno polje",
+    "button": "Pošlji",
+    "successTitle": "Hvala!",
+    "success": "Vaše povpraševanje je bilo uspešno poslano. Kmalu vas bomo kontaktirali.",
+    "error": "Napaka",
+    "errorMessage": "Povpraševanja ni bilo mogoče poslati. Poskusite znova pozneje.",
+    "email": "E-pošta*",
+    "name": "Kontaktna oseba*",
+    "club": "Ime kluba*",
+    "auflage": "Možna naklada*",
+    "phone": "Telefon",
+    "street": "Ulica / Hišna številka",
+    "city": "Poštna številka / Kraj",
+    "country": "Država",
+    "countries": {
+      "de": "Nemčija",
+      "at": "Avstrija",
+      "ch": "Švica",
+      "bg": "Bolgarija",
+      "da": "Danska",
+      "et": "Estonija",
+      "fi": "Finska",
+      "fr": "Francija",
+      "el": "Grčija",
+      "it": "Italija",
+      "hr": "Hrvaška",
+      "lv": "Latvija",
+      "lt": "Litva",
+      "nl": "Nizozemska",
+      "nb": "Norveška",
+      "pl": "Poljska",
+      "pt": "Portugalska",
+      "ro": "Romunija",
+      "sv": "Švedska",
+      "sk": "Slovaška",
+      "sl": "Slovenija",
+      "es": "Španija",
+      "cs": "Češka",
+      "hu": "Madžarska",
+      "other": "Drugo"
+    },
+    "message": "Dodatno sporočilo",
+    "fields": {
+      "email": "E-pošta",
+      "name": "Kontaktna oseba",
+      "club": "Klub",
+      "auflage": "Naklada",
+      "country": "Država",
+      "form": "Obrazec"
+    },
+    "errors": {
+      "required": "{field} je obvezno",
+      "maxLength": "Največ {maxLength} znakov",
+      "invalidEmail": "Neveljaven e-poštni naslov",
+      "invalidAuflage": "Neveljavna naklada",
+      "invalidCountry": "Neveljavna država",
+      "invalidRequest": "Neveljavno povpraševanje"
+    }
+  },
+  "footer": {
+    "copyright": "Vse pravice pridržane.",
+    "privacy": "Zasebnost",
+    "imprint": "Impressum"
+  }
+}

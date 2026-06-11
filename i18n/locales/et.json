@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Suur golfi otsi ja leia raamat",
+    "description": "See värvikas golfi otsi ja leia raamat tutvustab lastele spordi kauneimaid külgi. Naljakad lood, südamlikud tegelased ja elavad illustratsioonid muudavad golfi väikeste jaoks tõeliseks seikluseks."
+  },
+  "hero": {
+    "title": "Suur golfi otsi ja leia raamat",
+    "description": "Individuaalne kaup teie klubile",
+    "button": "Küsi kohe"
+  },
+  "nav": {
+    "title": "Suur {brand}",
+    "brand": "Golfi otsi ja leia raamat"
+  },
+  "preface": {
+    "text": "Kuidas tutvustada golfi maailma eelkooliealistele? Värviliste otsi ja leia raamatutega! Naljakad lood, südamlikud tegelased ja elavad illustratsioonid muudavad spordi väikeste jaoks tõeliseks seikluseks.",
+    "summary": {
+      "title": "Raamat lühidalt",
+      "items": [
+        "14 käsitsi illustreeritud lehekülge",
+        "Individuaalne kohandamine teie klubile ja sponsoritele",
+        "Suur formaat (260 x 375 mm, sarnane A3-le)",
+        "Tugev papp ja kvaliteetne viimistlus"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Miks otsi ja leia raamat?",
+      "description": "Otsi ja leia raamat tutvustab lastele golfi kauneimaid külgi. Värvilised illustratsioonid on südamlikud ja vanusele sobivad. Need on täis naljakaid ja kummalisi lugusid ja tekitavad soovi spordiga ise proovida."
+    },
+    {
+      "title": "Üks raamat, palju võimalusi",
+      "description": "Olgu see kaup klubipoes, südamlik tervituskingitus uutele liikmetele ja külalistele või meelelahutus lastearstide kabinettes – otsi ja leia raamat on mitmekülgne klubi ja golfi visiitkaart. Ja parim: müügitulu võib minna otse noortetööle."
+    },
+    {
+      "title": "Teie klubile kohandatud",
+      "description": "Teie käsitsi joonistatud klubimaja või teie väljaku silmapaistev eripära kaunistab kaant. Sponsorid saavad end tagakaanele jäädvustada ja projekti aktiivselt toetada."
+    }
+  ],
+  "requestForm": {
+    "title": "Küsi pakkumist ilma kohustuseta",
+    "required": "* Kohustuslik väli",
+    "button": "Saada",
+    "successTitle": "Aitäh!",
+    "success": "Teie päring on edukalt saadetud. Võtame peagi ühendust.",
+    "error": "Viga",
+    "errorMessage": "Päringut ei õnnestunud saata. Proovige hiljem uuesti.",
+    "email": "E-post*",
+    "name": "Kontaktisik*",
+    "club": "Klubi nimi*",
+    "auflage": "Võimalik tiraaž*",
+    "phone": "Telefon",
+    "street": "Tänav / Maja number",
+    "city": "Postiindeks / Linn",
+    "country": "Riik",
+    "countries": {
+      "de": "Saksamaa",
+      "at": "Austria",
+      "ch": "Šveits",
+      "bg": "Bulgaaria",
+      "da": "Taani",
+      "et": "Eesti",
+      "fi": "Soome",
+      "fr": "Prantsusmaa",
+      "el": "Kreeka",
+      "it": "Itaalia",
+      "hr": "Horvaatia",
+      "lv": "Läti",
+      "lt": "Leedu",
+      "nl": "Holland",
+      "nb": "Norra",
+      "pl": "Poola",
+      "pt": "Portugal",
+      "ro": "Rumeenia",
+      "sv": "Rootsi",
+      "sk": "Slovakkia",
+      "sl": "Sloveenia",
+      "es": "Hispaania",
+      "cs": "Tšehhi",
+      "hu": "Ungari",
+      "other": "Muu"
+    },
+    "message": "Lisateade",
+    "fields": {
+      "email": "E-post",
+      "name": "Kontaktisik",
+      "club": "Klubi",
+      "auflage": "Tiraaž",
+      "country": "Riik",
+      "form": "Vorm"
+    },
+    "errors": {
+      "required": "{field} on kohustuslik",
+      "maxLength": "Maksimaalselt {maxLength} tähemärki",
+      "invalidEmail": "Vigane e-posti aadress",
+      "invalidAuflage": "Vigane tiraaž",
+      "invalidCountry": "Vigane riik",
+      "invalidRequest": "Vigane päring"
+    }
+  },
+  "footer": {
+    "copyright": "Kõik õigused kaitstud.",
+    "privacy": "Privaatsus",
+    "imprint": "Impressum"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Suuri golf Etsi ja löydä -kirja",
+    "description": "Tämä värikäs golf Etsi ja löydä -kirja esittelee lapsille lajin kauneimmat puolet. Hauskat tarinat, sympaattiset hahmot ja eloisat kuvitukset tekevät golfista todellisen seikkailun pienimmille."
+  },
+  "hero": {
+    "title": "Suuri golf Etsi ja löydä -kirja",
+    "description": "Yksilöllinen tuote seuralle",
+    "button": "Pyydä tarjous nyt"
+  },
+  "nav": {
+    "title": "Suuri {brand}",
+    "brand": "Golf Etsi ja löydä -kirja"
+  },
+  "preface": {
+    "text": "Miten eskarilaiset tutustuvat golfiin? Värikkäillä Etsi ja löydä -kirjoilla! Hauskat tarinat, sympaattiset hahmot ja eloisat kuvitukset tekevät lajista todellisen seikkailun pienimmille.",
+    "summary": {
+      "title": "Kirja pähkinänkuoressa",
+      "items": [
+        "14 käsin kuvitettua sivua",
+        "Yksilöllinen räätälöinti seuralle ja sponsoreille",
+        "Suuri formaatti (260 x 375 mm, A3:n kaltainen)",
+        "Tukeva pahvi ja korkealaatuinen viimeistely"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Miksi Etsi ja löydä -kirja?",
+      "description": "Etsi ja löydä -kirja esittelee lapsille golfin kauneimmat puolet. Värikkäät kuvat ovat sympaattisia ja ikätasoon sopivia. Ne ovat täynnä hauskoja ja omituisia tarinoita ja herättävät halun kokeilla lajia itse."
+    },
+    {
+      "title": "Yksi kirja, monia mahdollisuuksia",
+      "description": "Olipa kyse seuran kaupan tuotteesta, lämpimästä tervetuliaislahjasta uusille jäsenille ja vieraille tai viihdykkeestä lastenlääkäriasemilla – Etsi ja löydä -kirja on monipuolinen käyntikortti seuralle ja golfille. Ja parasta: myyntituotot voidaan ohjata suoraan nuorisotyöhön."
+    },
+    {
+      "title": "Räätälöity seuralle",
+      "description": "Käsin piirretty klubitalo tai kentän erottuva piirre koristaa kansikuvaa. Sponsorit voivat jäädä ikuisesti takakanteen ja tukea projektia aktiivisesti."
+    }
+  ],
+  "requestForm": {
+    "title": "Pyydä tarjous sitoumuksetta",
+    "required": "* Pakollinen kenttä",
+    "button": "Lähetä",
+    "successTitle": "Kiitos!",
+    "success": "Pyyntösi on lähetetty. Otamme yhteyttä pian.",
+    "error": "Virhe",
+    "errorMessage": "Pyyntöä ei voitu lähettää. Yritä myöhemmin uudelleen.",
+    "email": "Sähköposti*",
+    "name": "Yhteyshenkilö*",
+    "club": "Seuran nimi*",
+    "auflage": "Mahdollinen painos*",
+    "phone": "Puhelin",
+    "street": "Katu / Numero",
+    "city": "Postinumero / Paikkakunta",
+    "country": "Maa",
+    "countries": {
+      "de": "Saksa",
+      "at": "Itävalta",
+      "ch": "Sveitsi",
+      "bg": "Bulgaria",
+      "da": "Tanska",
+      "et": "Viro",
+      "fi": "Suomi",
+      "fr": "Ranska",
+      "el": "Kreikka",
+      "it": "Italia",
+      "hr": "Kroatia",
+      "lv": "Latvia",
+      "lt": "Liettua",
+      "nl": "Alankomaat",
+      "nb": "Norja",
+      "pl": "Puola",
+      "pt": "Portugali",
+      "ro": "Romania",
+      "sv": "Ruotsi",
+      "sk": "Slovakia",
+      "sl": "Slovenia",
+      "es": "Espanja",
+      "cs": "Tšekki",
+      "hu": "Unkari",
+      "other": "Muu"
+    },
+    "message": "Lisäviesti",
+    "fields": {
+      "email": "Sähköposti",
+      "name": "Yhteyshenkilö",
+      "club": "Seura",
+      "auflage": "Painos",
+      "country": "Maa",
+      "form": "Lomake"
+    },
+    "errors": {
+      "required": "{field} on pakollinen",
+      "maxLength": "Enintään {maxLength} merkkiä",
+      "invalidEmail": "Virheellinen sähköpostiosoite",
+      "invalidAuflage": "Virheellinen painos",
+      "invalidCountry": "Virheellinen maa",
+      "invalidRequest": "Virheellinen pyyntö"
+    }
+  },
+  "footer": {
+    "copyright": "Kaikki oikeudet pidätetään.",
+    "privacy": "Tietosuoja",
+    "imprint": "Impressum"
+  }
+}

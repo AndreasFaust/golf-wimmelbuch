@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "El gran libro de Busca y Encuentra de Golf",
+    "description": "Este colorido libro de Busca y Encuentra sobre golf presenta a los niños los mejores aspectos del deporte. Historias divertidas, personajes entrañables e ilustraciones vibrantes convierten el golf en una auténtica aventura para los más pequeños."
+  },
+  "hero": {
+    "title": "El gran libro de Busca y Encuentra de Golf",
+    "description": "El merchandising personalizado para su club",
+    "button": "Solicitar ahora"
+  },
+  "nav": {
+    "title": "El gran {brand}",
+    "brand": "Libro de Busca y Encuentra de Golf"
+  },
+  "preface": {
+    "text": "¿Cómo acercar el mundo del golf a los niños en edad preescolar? ¡Con coloridos libros de Busca y Encuentra! Historias divertidas, personajes entrañables e ilustraciones vibrantes convierten el deporte en una auténtica aventura para los más pequeños.",
+    "summary": {
+      "title": "El libro de un vistazo",
+      "items": [
+        "14 páginas ilustradas a mano",
+        "Adaptación individual a su club y patrocinadores",
+        "Gran formato (260 x 375 mm, similar a A3)",
+        "Cartón resistente y acabado de alta calidad"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "¿Por qué un libro de Busca y Encuentra?",
+      "description": "El libro de Busca y Encuentra presenta a los niños los mejores aspectos del golf. Las coloridas ilustraciones son simpáticas y adecuadas para su edad. Están llenas de historias divertidas y curiosas y despiertan el deseo de probar el deporte por sí mismos."
+    },
+    {
+      "title": "Un libro, muchas posibilidades",
+      "description": "Ya sea como merchandising en la tienda del club, como regalo de bienvenida para nuevos socios e invitados, o como entretenimiento en consultas pediátricas: el libro de Busca y Encuentra es un escaparate versátil para el club y el golf. Y lo mejor: los ingresos de la venta pueden destinarse directamente al trabajo con los jóvenes."
+    },
+    {
+      "title": "A medida para su club",
+      "description": "Su club-house dibujado a mano o una característica distintiva de su campo adorna la portada. Sus patrocinadores pueden dejar su huella en la contraportada y apoyar activamente el proyecto."
+    }
+  ],
+  "requestForm": {
+    "title": "Solicitar presupuesto sin compromiso",
+    "required": "* Campo obligatorio",
+    "button": "Enviar",
+    "successTitle": "¡Gracias!",
+    "success": "Su solicitud se ha enviado correctamente. Nos pondremos en contacto con usted en breve.",
+    "error": "Error",
+    "errorMessage": "No se pudo enviar su solicitud. Por favor, inténtelo de nuevo más tarde.",
+    "email": "Correo electrónico*",
+    "name": "Persona de contacto*",
+    "club": "Nombre del club*",
+    "auflage": "Tirada posible*",
+    "phone": "Teléfono",
+    "street": "Calle / Número",
+    "city": "Código postal / Ciudad",
+    "country": "País",
+    "countries": {
+      "de": "Alemania",
+      "at": "Austria",
+      "ch": "Suiza",
+      "bg": "Bulgaria",
+      "da": "Dinamarca",
+      "et": "Estonia",
+      "fi": "Finlandia",
+      "fr": "Francia",
+      "el": "Grecia",
+      "it": "Italia",
+      "hr": "Croacia",
+      "lv": "Letonia",
+      "lt": "Lituania",
+      "nl": "Países Bajos",
+      "nb": "Noruega",
+      "pl": "Polonia",
+      "pt": "Portugal",
+      "ro": "Rumanía",
+      "sv": "Suecia",
+      "sk": "Eslovaquia",
+      "sl": "Eslovenia",
+      "es": "España",
+      "cs": "Chequia",
+      "hu": "Hungría",
+      "other": "Otro"
+    },
+    "message": "Mensaje adicional",
+    "fields": {
+      "email": "Correo electrónico",
+      "name": "Persona de contacto",
+      "club": "Club",
+      "auflage": "Tirada",
+      "country": "País",
+      "form": "Formulario"
+    },
+    "errors": {
+      "required": "{field} es obligatorio",
+      "maxLength": "Máximo {maxLength} caracteres",
+      "invalidEmail": "Dirección de correo electrónico no válida",
+      "invalidAuflage": "Tirada no válida",
+      "invalidCountry": "País no válido",
+      "invalidRequest": "Solicitud no válida"
+    }
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "imprint": "Aviso legal"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Wielka golfowa książka Znajdź i zobacz",
+    "description": "Ta kolorowa golfowa książka Znajdź i zobacz pokazuje dzieciom najpiękniejsze strony tego sportu. Zabawne historie, sympatyczne postacie i barwne ilustracje zamieniają golfa w prawdziwą przygodę dla najmłodszych."
+  },
+  "hero": {
+    "title": "Wielka golfowa książka Znajdź i zobacz",
+    "description": "Indywidualny merchandising dla Twojego klubu",
+    "button": "Zapytaj teraz"
+  },
+  "nav": {
+    "title": "Wielka {brand}",
+    "brand": "Golfowa książka Znajdź i zobacz"
+  },
+  "preface": {
+    "text": "Jak przybliżyć przedszkolakom świat golfa? Za pomocą kolorowych książek Znajdź i zobacz! Zabawne historie, sympatyczne postacie i barwne ilustracje zamieniają sport w prawdziwą przygodę dla najmłodszych.",
+    "summary": {
+      "title": "Książka w skrócie",
+      "items": [
+        "14 ręcznie ilustrowanych stron",
+        "Indywidualne dostosowanie do klubu i sponsorów",
+        "Duży format (260 x 375 mm, podobny do A3)",
+        "Solidny karton i wysokiej jakości wykończenie"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Dlaczego książka Znajdź i zobacz?",
+      "description": "Książka Znajdź i zobacz pokazuje dzieciom najpiękniejsze strony golfa. Kolorowe ilustracje są sympatyczne i dostosowane do wieku. Pełne są zabawnych i ciekawych historii i budzą chęć, by samemu spróbować tego sportu."
+    },
+    {
+      "title": "Jedna książka, wiele możliwości",
+      "description": "Czy to merchandising w sklepie klubowym, serdeczny prezent powitalny dla nowych członków i gości, czy rozrywka w gabinetach pediatrycznych – książka Znajdź i zobacz to wszechstronna wizytówka klubu i golfa. A co najlepsze: dochód ze sprzedaży może trafić bezpośrednio do pracy z młodzieżą."
+    },
+    {
+      "title": "Szyte na miarę dla Twojego klubu",
+      "description": "Ręcznie narysowany klubowy dom lub charakterystyczny element Waszego pola zdobi okładkę. Sponsorzy mogą umieścić swoje logo na tylnej stronie i aktywnie wspierać projekt."
+    }
+  ],
+  "requestForm": {
+    "title": "Zapytaj o ofertę bez zobowiązań",
+    "required": "* Pole wymagane",
+    "button": "Wyślij",
+    "successTitle": "Dziękujemy!",
+    "success": "Twoje zapytanie zostało wysłane. Wkrótce się z Tobą skontaktujemy.",
+    "error": "Błąd",
+    "errorMessage": "Nie udało się wysłać zapytania. Spróbuj ponownie później.",
+    "email": "E-mail*",
+    "name": "Osoba kontaktowa*",
+    "club": "Nazwa klubu*",
+    "auflage": "Możliwy nakład*",
+    "phone": "Telefon",
+    "street": "Ulica / Numer",
+    "city": "Kod pocztowy / Miasto",
+    "country": "Kraj",
+    "countries": {
+      "de": "Niemcy",
+      "at": "Austria",
+      "ch": "Szwajcaria",
+      "bg": "Bułgaria",
+      "da": "Dania",
+      "et": "Estonia",
+      "fi": "Finlandia",
+      "fr": "Francja",
+      "el": "Grecja",
+      "it": "Włochy",
+      "hr": "Chorwacja",
+      "lv": "Łotwa",
+      "lt": "Litwa",
+      "nl": "Holandia",
+      "nb": "Norwegia",
+      "pl": "Polska",
+      "pt": "Portugalia",
+      "ro": "Rumunia",
+      "sv": "Szwecja",
+      "sk": "Słowacja",
+      "sl": "Słowenia",
+      "es": "Hiszpania",
+      "cs": "Czechy",
+      "hu": "Węgry",
+      "other": "Inny"
+    },
+    "message": "Dodatkowa wiadomość",
+    "fields": {
+      "email": "E-mail",
+      "name": "Osoba kontaktowa",
+      "club": "Klub",
+      "auflage": "Nakład",
+      "country": "Kraj",
+      "form": "Formularz"
+    },
+    "errors": {
+      "required": "{field} jest wymagane",
+      "maxLength": "Maksymalnie {maxLength} znaków",
+      "invalidEmail": "Nieprawidłowy adres e-mail",
+      "invalidAuflage": "Nieprawidłowy nakład",
+      "invalidCountry": "Nieprawidłowy kraj",
+      "invalidRequest": "Nieprawidłowe zapytanie"
+    }
+  },
+  "footer": {
+    "copyright": "Wszelkie prawa zastrzeżone.",
+    "privacy": "Prywatność",
+    "imprint": "Impressum"
+  }
+}

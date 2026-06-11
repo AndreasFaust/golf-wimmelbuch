@@ -193,11 +193,13 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         />
       </UFormField>
       <UFormField :label="$t('requestForm.country')" name="country" size="xl">
-        <USelect
+        <USelectMenu
           v-model="state.country"
+          value-key="value"
           size="xl"
           class="w-full"
           :items="countryItems"
+          search-input
         />
       </UFormField>
     </div>

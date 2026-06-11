@@ -1,7 +1,16 @@
 import nodemailer, { type Transporter } from "nodemailer";
+import {
+  getConfirmationEmailTemplate,
+  type ConfirmationEmailLocale,
+  type ConfirmationEmailTemplate,
+} from "#shared/confirmation-email-templates";
+import { getAppLocaleDisplay } from "#shared/i18n";
 import type { RequestFormPayload } from "#shared/request-form";
 
-export type EmailLocale = "de" | "en";
+export {
+  resolveConfirmationEmailLocale as resolveEmailLocale,
+  type ConfirmationEmailLocale as EmailLocale,
+} from "#shared/confirmation-email-templates";
 
 interface SmtpConfig {
   host: string;
@@ -30,70 +39,6 @@ function buildTransporter(config: SmtpConfig): Transporter {
   return cachedTransporter;
 }
 
-interface TemplateStrings {
-  brand: string;
-  subject: string;
-  greeting: (name: string) => string;
-  intro: string;
-  detailsTitle: string;
-  fieldLabels: {
-    club: string;
-    auflage: string;
-    phone: string;
-    street: string;
-    city: string;
-    country: string;
-    message: string;
-  };
-  closing: string;
-  signature: string;
-}
-
-const TEMPLATES: Record<EmailLocale, TemplateStrings> = {
-  de: {
-    brand: "Golf-Wimmelbuch",
-    subject: "Bestätigung Ihrer Anfrage – Das große Golf-Wimmelbuch",
-    greeting: (name) => `Hallo ${name},`,
-    intro:
-      "vielen Dank für Ihre Anfrage zum großen Golf-Wimmelbuch. Wir haben Ihre Angaben erhalten und melden uns in Kürze persönlich bei Ihnen.",
-    detailsTitle: "Ihre Angaben",
-    fieldLabels: {
-      club: "Club",
-      auflage: "Mögliche Auflage",
-      phone: "Telefon",
-      street: "Straße / Hausnummer",
-      city: "PLZ / Ort",
-      country: "Land",
-      message: "Nachricht",
-    },
-    closing: "Mit herzlichen Grüßen",
-    signature: "Ludwig Faust\nfaust kommunikation KG",
-  },
-  en: {
-    brand: "Golf Search-and-Find Book",
-    subject:
-      "Confirmation of your request – The Big Golf Search-and-Find Book",
-    greeting: (name) => `Hello ${name},`,
-    intro:
-      "thank you for your request regarding The Big Golf Search-and-Find Book. We have received your details and will get back to you personally shortly.",
-    detailsTitle: "Your details",
-    fieldLabels: {
-      club: "Club",
-      auflage: "Possible edition",
-      phone: "Phone",
-      street: "Street / House number",
-      city: "Postcode / City",
-      country: "Country",
-      message: "Message",
-    },
-    closing: "Best regards,",
-    signature: "Ludwig Faust\nfaust kommunikation KG",
-  },
-};
-
-// Accepts a bare email ("info@example.com") or the legacy "Name <email>" form
-// and returns just the address part, so we can rebuild the From header with a
-// dynamic display name regardless of how NUXT_SMTP_FROM is written.
 function extractEmailAddress(from: string): string {
   const match = from.match(/<([^>]+)>/);
   return (match?.[1] ?? from).trim();
@@ -116,7 +61,7 @@ function escapeHtml(value: string): string {
 
 function buildDetailRows(
   data: RequestFormPayload,
-  t: TemplateStrings,
+  t: ConfirmationEmailTemplate
 ): Array<{ label: string; value: string }> {
   const rows: Array<{ label: string; value: string }> = [
     { label: t.fieldLabels.club, value: data.club },
@@ -135,7 +80,10 @@ function buildDetailRows(
   return rows;
 }
 
-function renderText(data: RequestFormPayload, t: TemplateStrings): string {
+function renderText(
+  data: RequestFormPayload,
+  t: ConfirmationEmailTemplate
+): string {
   const rows = buildDetailRows(data, t)
     .map((row) => `- ${row.label}: ${row.value}`)
     .join("\n");
@@ -153,18 +101,22 @@ function renderText(data: RequestFormPayload, t: TemplateStrings): string {
   ].join("\n");
 }
 
-function renderHtml(data: RequestFormPayload, t: TemplateStrings): string {
+function renderHtml(
+  data: RequestFormPayload,
+  t: ConfirmationEmailTemplate,
+  htmlLang: ConfirmationEmailLocale
+): string {
   const rows = buildDetailRows(data, t)
     .map(
       (row) =>
-        `<tr><td style="padding:4px 12px 4px 0;color:#666;vertical-align:top;">${escapeHtml(row.label)}</td><td style="padding:4px 0;">${escapeHtml(row.value).replace(/\n/g, "<br>")}</td></tr>`,
+        `<tr><td style="padding:4px 12px 4px 0;color:#666;vertical-align:top;">${escapeHtml(row.label)}</td><td style="padding:4px 0;">${escapeHtml(row.value).replace(/\n/g, "<br>")}</td></tr>`
     )
     .join("");
 
   const signatureHtml = escapeHtml(t.signature).replace(/\n/g, "<br>");
 
   return `<!doctype html>
-<html lang="${t === TEMPLATES.de ? "de" : "en"}">
+<html lang="${htmlLang}">
   <body style="font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#082137;max-width:600px;margin:0 auto;padding:24px;">
     <p>${escapeHtml(t.greeting(data.name))}</p>
     <p>${escapeHtml(t.intro)}</p>
@@ -178,7 +130,7 @@ function renderHtml(data: RequestFormPayload, t: TemplateStrings): string {
 export async function sendConfirmationEmail(
   config: SmtpConfig,
   data: RequestFormPayload,
-  locale: EmailLocale = "de",
+  locale: unknown = "de"
 ): Promise<void> {
   if (!config.host || !config.user || !config.password || !config.from) {
     throw createError({
@@ -187,7 +139,8 @@ export async function sendConfirmationEmail(
     });
   }
 
-  const template = TEMPLATES[locale];
+  const { locale: emailLocale, template } =
+    getConfirmationEmailTemplate(locale);
   const transporter = buildTransporter(config);
 
   const info = await transporter.sendMail({
@@ -195,14 +148,14 @@ export async function sendConfirmationEmail(
     to: data.email,
     subject: template.subject,
     text: renderText(data, template),
-    html: renderHtml(data, template),
+    html: renderHtml(data, template, emailLocale),
   });
   console.log(
-    `[email] confirmation → ${data.email}  messageId=${info.messageId}  response=${info.response}`,
+    `[email] confirmation → ${data.email}  messageId=${info.messageId}  response=${info.response}`
   );
 }
 
-const OPERATOR_TEMPLATE: TemplateStrings = {
+const OPERATOR_TEMPLATE: ConfirmationEmailTemplate = {
   brand: "Golf-Wimmelbuch",
   subject: "Neue Anfrage – Das große Golf-Wimmelbuch",
   greeting: () => "Neue Anfrage über das Formular",
@@ -221,24 +174,38 @@ const OPERATOR_TEMPLATE: TemplateStrings = {
   signature: "",
 };
 
-function renderOperatorText(data: RequestFormPayload): string {
+function renderOperatorText(
+  data: RequestFormPayload,
+  pageLocale: unknown,
+): string {
   const t = OPERATOR_TEMPLATE;
+  const pageLanguage = getAppLocaleDisplay(pageLocale);
   const rows = [
     { label: "Name", value: data.name },
     { label: "E-Mail", value: data.email },
+    { label: "Seitensprache", value: pageLanguage },
     ...buildDetailRows(data, t),
   ]
     .map((row) => `${row.label}: ${row.value}`)
     .join("\n");
 
-  return [t.intro, "", rows].join("\n");
+  return [
+    `${t.intro} Der Anfragende hat die Seite auf ${pageLanguage} betrachtet.`,
+    "",
+    rows,
+  ].join("\n");
 }
 
-function renderOperatorHtml(data: RequestFormPayload): string {
+function renderOperatorHtml(
+  data: RequestFormPayload,
+  pageLocale: unknown,
+): string {
   const t = OPERATOR_TEMPLATE;
+  const pageLanguage = getAppLocaleDisplay(pageLocale);
   const rows = [
     { label: "Name", value: data.name },
     { label: "E-Mail", value: data.email },
+    { label: "Seitensprache", value: pageLanguage },
     ...buildDetailRows(data, t),
   ]
     .map(
@@ -250,7 +217,7 @@ function renderOperatorHtml(data: RequestFormPayload): string {
   return `<!doctype html>
 <html lang="de">
   <body style="font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#082137;max-width:600px;margin:0 auto;padding:24px;">
-    <p>${escapeHtml(t.intro)}</p>
+    <p>${escapeHtml(t.intro)} Der Anfragende hat die Seite auf ${escapeHtml(pageLanguage)} betrachtet.</p>
     <table cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin-top:8px;">${rows}</table>
   </body>
 </html>`;
@@ -259,6 +226,7 @@ function renderOperatorHtml(data: RequestFormPayload): string {
 export async function sendOperatorNotification(
   config: SmtpConfig,
   data: RequestFormPayload,
+  pageLocale: unknown = "de",
 ): Promise<void> {
   if (!config.host || !config.user || !config.password || !config.from) {
     throw createError({
@@ -282,10 +250,10 @@ export async function sendOperatorNotification(
     to: operatorAddress,
     replyTo,
     subject: OPERATOR_TEMPLATE.subject,
-    text: renderOperatorText(data),
-    html: renderOperatorHtml(data),
+    text: renderOperatorText(data, pageLocale),
+    html: renderOperatorHtml(data, pageLocale),
   });
   console.log(
-    `[email] operator notification sent  messageId=${info.messageId}  response=${info.response}`,
+    `[email] operator notification sent  messageId=${info.messageId}  response=${info.response}`
   );
 }

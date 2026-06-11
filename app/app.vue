@@ -1,12 +1,17 @@
 <script setup lang="ts">
-import * as locales from "@nuxt/ui/locale";
+import * as uiLocales from "@nuxt/ui/locale";
+import { getNuxtUiLocaleCode, getOgLocale, getOgLocaleAlternates } from "#shared/i18n";
 
 const { locale, t } = useI18n();
 const config = useRuntimeConfig();
 const requestUrl = useRequestURL();
 
-const lang = computed(() => locales[locale.value].code);
-const dir = computed(() => locales[locale.value].dir);
+const uiLocale = computed(() => {
+  const key = getNuxtUiLocaleCode(locale.value) as keyof typeof uiLocales;
+  return uiLocales[key] ?? uiLocales.en;
+});
+const lang = computed(() => uiLocale.value.code);
+const dir = computed(() => uiLocale.value.dir);
 
 const siteUrl = computed(
   () => config.public.siteUrl || requestUrl.origin,
@@ -29,9 +34,8 @@ useSeoMeta({
   ogImage: () => ogImage.value,
   ogUrl: () => siteUrl.value,
   ogType: "website",
-  ogLocale: () => (locale.value === "de" ? "de_DE" : "en_US"),
-  ogLocaleAlternate: () =>
-    locale.value === "de" ? ["en_US"] : ["de_DE"],
+  ogLocale: () => getOgLocale(locale.value),
+  ogLocaleAlternate: () => getOgLocaleAlternates(locale.value),
   ogSiteName: () => t("nav.brand"),
   twitterCard: "summary_large_image",
   twitterTitle: () => t("meta.title"),
@@ -41,7 +45,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <UApp :locale="locales[locale]">
+  <UApp :locale="uiLocale">
     <navigation
       class="fixed top-0 inset-x-0 z-20 bg-blue-100/90 backdrop-blur-sm border-b border-blue-200 h-12"
     >

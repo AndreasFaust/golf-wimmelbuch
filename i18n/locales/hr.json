@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Velika golf knjiga Traži i pronađi",
+    "description": "Ova šarena golf knjiga Traži i pronađi predstavlja djeci najljepše strane ovog sporta. Smiješne priče, simpatični likovi i živopisne ilustracije pretvaraju golf u pravu avanturu za najmlađe."
+  },
+  "hero": {
+    "title": "Velika golf knjiga Traži i pronađi",
+    "description": "Individualni merchandising za vaš klub",
+    "button": "Zatražite sada"
+  },
+  "nav": {
+    "title": "Velika {brand}",
+    "brand": "Golf knjiga Traži i pronađi"
+  },
+  "preface": {
+    "text": "Kako približiti predškolskoj djeci svijet golfa? Pomoću šarenih knjiga Traži i pronađi! Smiješne priče, simpatični likovi i živopisne ilustracije pretvaraju sport u pravu avanturu za najmlađe.",
+    "summary": {
+      "title": "Knjiga ukratko",
+      "items": [
+        "14 ručno ilustriranih stranica",
+        "Individualna prilagodba vašem klubu i sponzorima",
+        "Veliki format (260 x 375 mm, slično A3)",
+        "Čvrsti karton i visokokvalitetna izrada"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Zašto knjiga Traži i pronađi?",
+      "description": "Knjiga Traži i pronađi predstavlja djeci najljepše strane golfa. Šarene ilustracije su simpatične i prilagođene dobi. Pune su smiješnih i zanimljivih priča i probude želju da sport sami isprobaju."
+    },
+    {
+      "title": "Jedna knjiga, mnoge mogućnosti",
+      "description": "Bilo kao merchandising u klupskom shopu, srdačan poklon dobrodošlice novim članovima i gostima ili zabava u pedijatrijskim ordinacijama – knjiga Traži i pronađi je svestrana vizitka kluba i golfa. A najbolje: prihod od prodaje može izravno ići u rad s mladima."
+    },
+    {
+      "title": "Skrojeno za vaš klub",
+      "description": "Vaš ručno nacrtani klupski dom ili upečatljiva značajka vašeg igrališta krasi naslovnicu. Vaši sponzori mogu se zapisati na poleđini i aktivno podržati projekt."
+    }
+  ],
+  "requestForm": {
+    "title": "Zatražite ponudu bez obveze",
+    "required": "* Obavezno polje",
+    "button": "Pošalji",
+    "successTitle": "Hvala!",
+    "success": "Vaš upit je uspješno poslan. Uskoro ćemo vas kontaktirati.",
+    "error": "Greška",
+    "errorMessage": "Upit nije moguće poslati. Pokušajte ponovno kasnije.",
+    "email": "E-mail*",
+    "name": "Kontakt osoba*",
+    "club": "Naziv kluba*",
+    "auflage": "Mogući tiraž*",
+    "phone": "Telefon",
+    "street": "Ulica / Kućni broj",
+    "city": "Poštanski broj / Grad",
+    "country": "Država",
+    "countries": {
+      "de": "Njemačka",
+      "at": "Austrija",
+      "ch": "Švicarska",
+      "bg": "Bugarska",
+      "da": "Danska",
+      "et": "Estonija",
+      "fi": "Finska",
+      "fr": "Francuska",
+      "el": "Grčka",
+      "it": "Italija",
+      "hr": "Hrvatska",
+      "lv": "Latvija",
+      "lt": "Litva",
+      "nl": "Nizozemska",
+      "nb": "Norveška",
+      "pl": "Poljska",
+      "pt": "Portugal",
+      "ro": "Rumunjska",
+      "sv": "Švedska",
+      "sk": "Slovačka",
+      "sl": "Slovenija",
+      "es": "Španjolska",
+      "cs": "Češka",
+      "hu": "Mađarska",
+      "other": "Ostalo"
+    },
+    "message": "Dodatna poruka",
+    "fields": {
+      "email": "E-mail",
+      "name": "Kontakt osoba",
+      "club": "Klub",
+      "auflage": "Tiraž",
+      "country": "Država",
+      "form": "Obrazac"
+    },
+    "errors": {
+      "required": "{field} je obavezno",
+      "maxLength": "Najviše {maxLength} znakova",
+      "invalidEmail": "Nevaljana e-mail adresa",
+      "invalidAuflage": "Nevaljan tiraž",
+      "invalidCountry": "Nevaljana država",
+      "invalidRequest": "Nevaljan upit"
+    }
+  },
+  "footer": {
+    "copyright": "Sva prava pridržana.",
+    "privacy": "Privatnost",
+    "imprint": "Impressum"
+  }
+}

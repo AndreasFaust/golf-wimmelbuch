@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Den stora golfletarbok",
+    "description": "Denna färgglada golfletarbok visar barn de vackraste sidorna av sporten. Roliga berättelser, sympatiska figurer och livfulla illustrationer gör golf till ett riktigt äventyr för de minsta."
+  },
+  "hero": {
+    "title": "Den stora golfletarbok",
+    "description": "Det individuella merchandiset för er klubb",
+    "button": "Begär nu"
+  },
+  "nav": {
+    "title": "Den stora {brand}",
+    "brand": "Golfletarbok"
+  },
+  "preface": {
+    "text": "Hur introducerar man förskolebarn för golfens värld? Med färgglada letarböcker! Roliga berättelser, sympatiska figurer och livfulla illustrationer gör sporten till ett riktigt äventyr för de minsta.",
+    "summary": {
+      "title": "Boken i korthet",
+      "items": [
+        "14 handillustrerade sidor",
+        "Individuell anpassning till er klubb och sponsorer",
+        "Stort format (260 x 375 mm, liknande A3)",
+        "Stabilt kartong och högkvalitativt utförande"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Varför en letarbok?",
+      "description": "Letarboken visar barn de vackraste sidorna av golf. De färgglada bilderna är sympatiska och åldersanpassade. De är fulla av roliga och märkliga berättelser och väcker lusten att själv prova sporten."
+    },
+    {
+      "title": "En bok, många möjligheter",
+      "description": "Oavsett om det är merchandise i klubbshoppen, en hjärtlig välkomstgåva till nya medlemmar och gäster eller underhållning på barnläkarmottagningar – letarboken är ett mångsidigt visitkort för klubben och golfen. Och det bästa: intäkterna från försäljningen kan gå direkt till ungdomsverksamheten."
+    },
+    {
+      "title": "Skräddarsydd för er klubb",
+      "description": "Ert handritade klubbhus eller en markant särdrag på er bana pryder omslaget. Era sponsorer kan för evigt finnas på baksidan och aktivt stödja projektet."
+    }
+  ],
+  "requestForm": {
+    "title": "Begär offert utan förpliktelse",
+    "required": "* Obligatoriskt fält",
+    "button": "Skicka",
+    "successTitle": "Tack!",
+    "success": "Din förfrågan har skickats. Vi kontaktar dig inom kort.",
+    "error": "Fel",
+    "errorMessage": "Din förfrågan kunde inte skickas. Försök igen senare.",
+    "email": "E-post*",
+    "name": "Kontaktperson*",
+    "club": "Klubbens namn*",
+    "auflage": "Möjlig upplaga*",
+    "phone": "Telefon",
+    "street": "Gata / Husnummer",
+    "city": "Postnummer / Ort",
+    "country": "Land",
+    "countries": {
+      "de": "Tyskland",
+      "at": "Österrike",
+      "ch": "Schweiz",
+      "bg": "Bulgarien",
+      "da": "Danmark",
+      "et": "Estland",
+      "fi": "Finland",
+      "fr": "Frankrike",
+      "el": "Grekland",
+      "it": "Italien",
+      "hr": "Kroatien",
+      "lv": "Lettland",
+      "lt": "Litauen",
+      "nl": "Nederländerna",
+      "nb": "Norge",
+      "pl": "Polen",
+      "pt": "Portugal",
+      "ro": "Rumänien",
+      "sv": "Sverige",
+      "sk": "Slovakien",
+      "sl": "Slovenien",
+      "es": "Spanien",
+      "cs": "Tjeckien",
+      "hu": "Ungern",
+      "other": "Annat"
+    },
+    "message": "Ytterligare meddelande",
+    "fields": {
+      "email": "E-post",
+      "name": "Kontaktperson",
+      "club": "Klubb",
+      "auflage": "Upplaga",
+      "country": "Land",
+      "form": "Formulär"
+    },
+    "errors": {
+      "required": "{field} är obligatoriskt",
+      "maxLength": "Högst {maxLength} tecken",
+      "invalidEmail": "Ogiltig e-postadress",
+      "invalidAuflage": "Ogiltig upplaga",
+      "invalidCountry": "Ogiltigt land",
+      "invalidRequest": "Ogiltig förfrågan"
+    }
+  },
+  "footer": {
+    "copyright": "Alla rättigheter förbehållna.",
+    "privacy": "Integritet",
+    "imprint": "Impressum"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Le grand livre Cherche et Trouve Golf",
+    "description": "Ce livre Cherche et Trouve coloré sur le golf présente aux enfants les plus beaux aspects du sport. Des histoires amusantes, des personnages attachants et des illustrations éclatantes transforment le golf en une véritable aventure pour les plus jeunes."
+  },
+  "hero": {
+    "title": "Le grand livre Cherche et Trouve Golf",
+    "description": "Le merchandising personnalisé pour votre club",
+    "button": "Demander maintenant"
+  },
+  "nav": {
+    "title": "Le grand {brand}",
+    "brand": "Livre Cherche et Trouve Golf"
+  },
+  "preface": {
+    "text": "Comment initier les enfants d'âge préscolaire au monde du golf ? Avec des livres Cherche et Trouve colorés ! Des histoires amusantes, des personnages attachants et des illustrations éclatantes transforment le sport en une véritable aventure pour les plus jeunes.",
+    "summary": {
+      "title": "Le livre en bref",
+      "items": [
+        "14 pages illustrées à la main",
+        "Adaptation individuelle à votre club et à vos sponsors",
+        "Grand format (260 x 375 mm, proche du A3)",
+        "Carton solide et finition de haute qualité"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Pourquoi un livre Cherche et Trouve ?",
+      "description": "Le livre Cherche et Trouve présente aux enfants les plus beaux aspects du golf. Les illustrations colorées sont sympathiques et adaptées à l'âge. Elles regorgent d'histoires drôles et curieuses et éveillent l'envie d'essayer le sport soi-même."
+    },
+    {
+      "title": "Un livre, de nombreuses possibilités",
+      "description": "Que ce soit comme article de merchandising dans la boutique du club, comme cadeau de bienvenue pour les nouveaux membres et les invités, ou comme divertissement dans les cabinets pédiatriques – le livre Cherche et Trouve est une vitrine polyvalente pour le club et le golf. Et le meilleur : les recettes de la vente peuvent être directement investies dans le travail avec les jeunes."
+    },
+    {
+      "title": "Sur mesure pour votre club",
+      "description": "Votre club-house dessiné à la main ou une particularité marquante de votre parcours orne la page de titre. Vos sponsors peuvent se faire connaître au verso et soutenir activement le projet."
+    }
+  ],
+  "requestForm": {
+    "title": "Demander un devis sans engagement",
+    "required": "* Champ obligatoire",
+    "button": "Envoyer",
+    "successTitle": "Merci !",
+    "success": "Votre demande a bien été envoyée. Nous vous contacterons prochainement.",
+    "error": "Erreur",
+    "errorMessage": "Votre demande n'a pas pu être envoyée. Veuillez réessayer plus tard.",
+    "email": "E-mail*",
+    "name": "Personne de contact*",
+    "club": "Nom du club*",
+    "auflage": "Tirage possible*",
+    "phone": "Téléphone",
+    "street": "Rue / Numéro",
+    "city": "Code postal / Ville",
+    "country": "Pays",
+    "countries": {
+      "de": "Allemagne",
+      "at": "Autriche",
+      "ch": "Suisse",
+      "bg": "Bulgarie",
+      "da": "Danemark",
+      "et": "Estonie",
+      "fi": "Finlande",
+      "fr": "France",
+      "el": "Grèce",
+      "it": "Italie",
+      "hr": "Croatie",
+      "lv": "Lettonie",
+      "lt": "Lituanie",
+      "nl": "Pays-Bas",
+      "nb": "Norvège",
+      "pl": "Pologne",
+      "pt": "Portugal",
+      "ro": "Roumanie",
+      "sv": "Suède",
+      "sk": "Slovaquie",
+      "sl": "Slovénie",
+      "es": "Espagne",
+      "cs": "Tchéquie",
+      "hu": "Hongrie",
+      "other": "Autre"
+    },
+    "message": "Message complémentaire",
+    "fields": {
+      "email": "E-mail",
+      "name": "Personne de contact",
+      "club": "Club",
+      "auflage": "Tirage",
+      "country": "Pays",
+      "form": "Formulaire"
+    },
+    "errors": {
+      "required": "{field} est obligatoire",
+      "maxLength": "Maximum {maxLength} caractères",
+      "invalidEmail": "Adresse e-mail invalide",
+      "invalidAuflage": "Tirage invalide",
+      "invalidCountry": "Pays invalide",
+      "invalidRequest": "Demande invalide"
+    }
+  },
+  "footer": {
+    "copyright": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "imprint": "Mentions légales"
+  }
+}

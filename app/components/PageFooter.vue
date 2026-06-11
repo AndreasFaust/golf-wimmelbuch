@@ -1,6 +1,19 @@
 <script setup lang="ts">
+import * as uiLocales from "@nuxt/ui/locale";
+import { APP_LOCALES, getNuxtUiLocaleCode } from "#shared/i18n";
+
 const route = useRoute();
-const { locale, setLocale, locales } = useI18n();
+const { locale, setLocale } = useI18n();
+
+const localeSelectItems = APP_LOCALES.map(({ code, name }) => {
+  const uiLocale =
+    uiLocales[getNuxtUiLocaleCode(code) as keyof typeof uiLocales];
+  return uiLocale ? { ...uiLocale, code } : { code, name };
+});
+
+function onLocaleChange(code: string) {
+  setLocale(code as typeof locale.value);
+}
 </script>
 
 <template>
@@ -32,8 +45,9 @@ const { locale, setLocale, locales } = useI18n();
         >
         <ULocaleSelect
           :model-value="locale"
-          :locales="locales"
-          @update:model-value="setLocale($event)"
+          :locales="localeSelectItems"
+          search-input
+          @update:model-value="onLocaleChange"
         />
       </div>
     </div>

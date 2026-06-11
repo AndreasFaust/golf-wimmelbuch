@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Veľká golfová hľadacia kniha",
+    "description": "Táto farebná golfová hľadacia kniha predstavuje deťom najkrajšie stránky tohto športu. Vtipné príbehy, sympatické postavy a živé ilustrácie premenia golf na skutočné dobrodružstvo pre tých najmenších."
+  },
+  "hero": {
+    "title": "Veľká golfová hľadacia kniha",
+    "description": "Individuálny merchandising pre váš klub",
+    "button": "Dopytovať teraz"
+  },
+  "nav": {
+    "title": "Veľká {brand}",
+    "brand": "Golfová hľadacia kniha"
+  },
+  "preface": {
+    "text": "Ako priblížiť predškolákom svet golfu? Pomocou farebných hľadacích kníh! Vtipné príbehy, sympatické postavy a živé ilustrácie premenia šport na skutočné dobrodružstvo pre tých najmenších.",
+    "summary": {
+      "title": "Kniha v skratke",
+      "items": [
+        "14 ručne ilustrovaných strán",
+        "Individuálne prispôsobenie klubu a sponzorom",
+        "Veľký formát (260 x 375 mm, podobne ako A3)",
+        "Pevná lepenka a kvalitné spracovanie"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Prečo hľadacia kniha?",
+      "description": "Hľadacia kniha predstavuje deťom najkrajšie stránky golfu. Farebné ilustrácie sú sympatické a vekovo primerané. Sú plné vtipných a kurióznych príbehov a prebúdzajú túžbu šport sami vyskúšať."
+    },
+    {
+      "title": "Jedna kniha, mnoho možností",
+      "description": "Či už ako merchandising v klubovom obchode, ako srdečný uvítací darček pre nových členov a hostí, alebo ako zábava v detských ambulanciách – hľadacia kniha je všestranná vizitka klubu a golfu. A navyše: výťažok z predaja môže ísť priamo do práce s mládežou."
+    },
+    {
+      "title": "Na mieru vášmu klubu",
+      "description": "Váš ručne nakreslený klubový dom alebo výrazná zvláštnosť vášho ihriska zdobí titulnú stranu. Vaši sponzori sa môžu zapísať na zadnú stranu a projekt aktívne podporiť."
+    }
+  ],
+  "requestForm": {
+    "title": "Nezáväzne dopytovať teraz",
+    "required": "* Povinné pole",
+    "button": "Odoslať",
+    "successTitle": "Ďakujeme!",
+    "success": "Váš dopyt bol úspešne odoslaný. Čoskoro sa vám ozveme.",
+    "error": "Chyba",
+    "errorMessage": "Dopyt sa nepodarilo odoslať. Skúste to prosím neskôr.",
+    "email": "E-mail*",
+    "name": "Kontaktná osoba*",
+    "club": "Názov klubu*",
+    "auflage": "Možný náklad*",
+    "phone": "Telefón",
+    "street": "Ulica / Číslo",
+    "city": "PSČ / Mesto",
+    "country": "Krajina",
+    "countries": {
+      "de": "Nemecko",
+      "at": "Rakúsko",
+      "ch": "Švajčiarsko",
+      "bg": "Bulharsko",
+      "da": "Dánsko",
+      "et": "Estónsko",
+      "fi": "Fínsko",
+      "fr": "Francúzsko",
+      "el": "Grécko",
+      "it": "Taliansko",
+      "hr": "Chorvátsko",
+      "lv": "Lotyšsko",
+      "lt": "Litva",
+      "nl": "Holandsko",
+      "nb": "Nórsko",
+      "pl": "Poľsko",
+      "pt": "Portugalsko",
+      "ro": "Rumunsko",
+      "sv": "Švédsko",
+      "sk": "Slovensko",
+      "sl": "Slovinsko",
+      "es": "Španielsko",
+      "cs": "Česko",
+      "hu": "Maďarsko",
+      "other": "Iná"
+    },
+    "message": "Ďalšia správa",
+    "fields": {
+      "email": "E-mail",
+      "name": "Kontaktná osoba",
+      "club": "Klub",
+      "auflage": "Náklad",
+      "country": "Krajina",
+      "form": "Formulár"
+    },
+    "errors": {
+      "required": "{field} je povinné",
+      "maxLength": "Maximálne {maxLength} znakov",
+      "invalidEmail": "Neplatná e-mailová adresa",
+      "invalidAuflage": "Neplatný náklad",
+      "invalidCountry": "Neplatná krajina",
+      "invalidRequest": "Neplatný dopyt"
+    }
+  },
+  "footer": {
+    "copyright": "Všetky práva vyhradené.",
+    "privacy": "Ochrana súkromia",
+    "imprint": "Impressum"
+  }
+}

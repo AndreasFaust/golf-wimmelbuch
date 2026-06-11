@@ -1,3 +1,5 @@
+import { APP_LOCALES } from "./shared/i18n";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -50,17 +52,7 @@ export default defineNuxtConfig({
   i18n: {
     defaultLocale: "de",
     strategy: "no_prefix",
-    locales: [
-      {
-        code: "de",
-        name: "Deutsch",
-        file: "de.json",
-      },
-      {
-        code: "en",
-        name: "English",
-        file: "en.json",
-      },
-    ],
+    langDir: "locales",
+    locales: APP_LOCALES,
   },
 });

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Didžioji golfo rask ir surask knyga",
+    "description": "Ši spalvinga golfo rask ir surask knyga supažindina vaikus su gražiausiomis šio sporto pusėmis. Linksmos istorijos, simpatiški personažai ir ryškios iliustracijos paverčia golfą tikra mažųjų nuotykiu."
+  },
+  "hero": {
+    "title": "Didžioji golfo rask ir surask knyga",
+    "description": "Individuali prekė jūsų klubui",
+    "button": "Užklausti dabar"
+  },
+  "nav": {
+    "title": "Didžioji {brand}",
+    "brand": "Golfo rask ir surask knyga"
+  },
+  "preface": {
+    "text": "Kaip supažindinti ikimokyklinio amžiaus vaikus su golfo pasauliu? Spalvingomis rask ir surask knygomis! Linksmos istorijos, simpatiški personažai ir ryškios iliustracijos paverčia sportą tikra mažųjų nuotykiu.",
+    "summary": {
+      "title": "Knyga trumpai",
+      "items": [
+        "14 ranka iliustruotų puslapių",
+        "Individualus pritaikymas jūsų klubui ir rėmėjams",
+        "Didelis formatas (260 x 375 mm, panašus į A3)",
+        "Tvirtas kartonas ir aukštos kokybės apdaila"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Kodėl rask ir surask knyga?",
+      "description": "Rask ir surask knyga supažindina vaikus su gražiausiomis golfo pusėmis. Spalvingos iliustracijos yra simpatiškos ir pritaikytos amžiui. Jos pilnos linksmų ir keistų istorijų ir sukelia norą patiems išbandyti sportą."
+    },
+    {
+      "title": "Viena knyga – daug galimybių",
+      "description": "Nesvarbu, ar tai prekė klubo parduotuvėje, šilta dovaną naujiems nariams ir svečiams, ar pramoga pediatrų kabinetuose – rask ir surask knyga yra universalus klubo ir golfo veidas. O svarbiausia: pajamos iš pardavimo gali eiti tiesiai jaunimo veiklai."
+    },
+    {
+      "title": "Sukurta jūsų klubui",
+      "description": "Jūsų ranka nupieštas klubo namas ar išskirtinis jūsų aikštyno bruožas puošia viršelį. Rėmėjai gali palikti savo ženklą ant galinio viršelio ir aktyviai remti projektą."
+    }
+  ],
+  "requestForm": {
+    "title": "Užklauskite pasiūlymo be įsipareigojimų",
+    "required": "* Privalomas laukas",
+    "button": "Siųsti",
+    "successTitle": "Ačiū!",
+    "success": "Jūsų užklausa sėkmingai išsiųsta. Netrukus susisieksime su jumis.",
+    "error": "Klaida",
+    "errorMessage": "Nepavyko išsiųsti užklausos. Bandykite vėliau.",
+    "email": "El. paštas*",
+    "name": "Kontaktinis asmuo*",
+    "club": "Klubo pavadinimas*",
+    "auflage": "Galimas tiražas*",
+    "phone": "Telefonas",
+    "street": "Gatvė / Numeris",
+    "city": "Pašto kodas / Miestas",
+    "country": "Šalis",
+    "countries": {
+      "de": "Vokietija",
+      "at": "Austrija",
+      "ch": "Šveicarija",
+      "bg": "Bulgarija",
+      "da": "Danija",
+      "et": "Estija",
+      "fi": "Suomija",
+      "fr": "Prancūzija",
+      "el": "Graikija",
+      "it": "Italija",
+      "hr": "Kroatija",
+      "lv": "Latvija",
+      "lt": "Lietuva",
+      "nl": "Nyderlandai",
+      "nb": "Norvegija",
+      "pl": "Lenkija",
+      "pt": "Portugalija",
+      "ro": "Rumunija",
+      "sv": "Švedija",
+      "sk": "Slovakija",
+      "sl": "Slovėnija",
+      "es": "Ispanija",
+      "cs": "Čekija",
+      "hu": "Vengrija",
+      "other": "Kita"
+    },
+    "message": "Papildoma žinutė",
+    "fields": {
+      "email": "El. paštas",
+      "name": "Kontaktinis asmuo",
+      "club": "Klubas",
+      "auflage": "Tiražas",
+      "country": "Šalis",
+      "form": "Forma"
+    },
+    "errors": {
+      "required": "{field} yra privalomas",
+      "maxLength": "Daugiausia {maxLength} simbolių",
+      "invalidEmail": "Neteisingas el. pašto adresas",
+      "invalidAuflage": "Neteisingas tiražas",
+      "invalidCountry": "Neteisinga šalis",
+      "invalidRequest": "Neteisinga užklausa"
+    }
+  },
+  "footer": {
+    "copyright": "Visos teisės saugomos.",
+    "privacy": "Privatumas",
+    "imprint": "Impressum"
+  }
+}

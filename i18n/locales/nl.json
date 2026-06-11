@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Het grote Golf Zoekboek",
+    "description": "Dit kleurrijke golf-zoekboek laat kinderen kennismaken met de mooiste kanten van de sport. Grappige verhalen, sympathieke figuren en levendige illustraties maken van golf een echt avontuur voor de kleintjes."
+  },
+  "hero": {
+    "title": "Het grote Golf Zoekboek",
+    "description": "Het individuele merchandise voor uw club",
+    "button": "Nu aanvragen"
+  },
+  "nav": {
+    "title": "Het grote {brand}",
+    "brand": "Golf Zoekboek"
+  },
+  "preface": {
+    "text": "Hoe breng je peuters dichter bij de wereld van golf? Met kleurrijke zoekboeken! Grappige verhalen, sympathieke figuren en levendige illustraties maken van de sport een echt avontuur voor de kleintjes.",
+    "summary": {
+      "title": "Het boek in het kort",
+      "items": [
+        "14 handgeïllustreerde pagina's",
+        "Individueel aangepast aan uw club en sponsors",
+        "Groot formaat (260 x 375 mm, vergelijkbaar met A3)",
+        "Stevig karton en hoogwaardige afwerking"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Waarom een zoekboek?",
+      "description": "Het zoekboek laat kinderen kennismaken met de mooiste kanten van golf. De kleurrijke afbeeldingen zijn sympathiek en leeftijdsgericht. Ze zitten vol grappige en merkwaardige verhalen en wekken de wens op om de sport zelf uit te proberen."
+    },
+    {
+      "title": "Eén boek, veel mogelijkheden",
+      "description": "Of het nu als merchandise in de clubshop, als hartelijk welkomstgeschenk voor nieuwe leden en gasten, of als vermaak in kinderartspraktijken is – het zoekboek is een veelzijdig visitekaartje voor de club en de golfsport. En het beste: de opbrengsten van de verkoop kunnen direct naar het jeugdwerk gaan."
+    },
+    {
+      "title": "Op maat voor uw club",
+      "description": "Uw handgetekende clubhuis of een opvallend kenmerk van uw baan siert de titelpagina. Uw sponsors kunnen zich op de achterkant vereeuwigen en het project actief ondersteunen."
+    }
+  ],
+  "requestForm": {
+    "title": "Nu vrijblijvend offerte aanvragen",
+    "required": "* Verplicht veld",
+    "button": "Verzenden",
+    "successTitle": "Bedankt!",
+    "success": "Uw aanvraag is succesvol verzonden. We nemen binnenkort contact met u op.",
+    "error": "Fout",
+    "errorMessage": "Uw aanvraag kon niet worden verzonden. Probeer het later opnieuw.",
+    "email": "E-mail*",
+    "name": "Contactpersoon*",
+    "club": "Naam van de club*",
+    "auflage": "Mogelijke oplage*",
+    "phone": "Telefoon",
+    "street": "Straat / Huisnummer",
+    "city": "Postcode / Plaats",
+    "country": "Land",
+    "countries": {
+      "de": "Duitsland",
+      "at": "Oostenrijk",
+      "ch": "Zwitserland",
+      "bg": "Bulgarije",
+      "da": "Denemarken",
+      "et": "Estland",
+      "fi": "Finland",
+      "fr": "Frankrijk",
+      "el": "Griekenland",
+      "it": "Italië",
+      "hr": "Kroatië",
+      "lv": "Letland",
+      "lt": "Litouwen",
+      "nl": "Nederland",
+      "nb": "Noorwegen",
+      "pl": "Polen",
+      "pt": "Portugal",
+      "ro": "Roemenië",
+      "sv": "Zweden",
+      "sk": "Slowakije",
+      "sl": "Slovenië",
+      "es": "Spanje",
+      "cs": "Tsjechië",
+      "hu": "Hongarije",
+      "other": "Overig"
+    },
+    "message": "Aanvullend bericht",
+    "fields": {
+      "email": "E-mail",
+      "name": "Contactpersoon",
+      "club": "Club",
+      "auflage": "Oplage",
+      "country": "Land",
+      "form": "Formulier"
+    },
+    "errors": {
+      "required": "{field} is verplicht",
+      "maxLength": "Maximaal {maxLength} tekens",
+      "invalidEmail": "Ongeldig e-mailadres",
+      "invalidAuflage": "Ongeldige oplage",
+      "invalidCountry": "Ongeldig land",
+      "invalidRequest": "Ongeldige aanvraag"
+    }
+  },
+  "footer": {
+    "copyright": "Alle rechten voorbehouden.",
+    "privacy": "Privacy",
+    "imprint": "Impressum"
+  }
+}

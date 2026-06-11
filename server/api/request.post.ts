@@ -5,7 +5,6 @@ import {
 import {
   sendConfirmationEmail,
   sendOperatorNotification,
-  type EmailLocale,
 } from "../utils/email";
 import { enforceRateLimit } from "../utils/rate-limit";
 
@@ -13,10 +12,6 @@ const RATE_LIMIT = {
   max: 5,
   windowMs: 15 * 60 * 1000,
 };
-
-function resolveLocale(value: unknown): EmailLocale {
-  return value === "en" ? "en" : "de";
-}
 
 export default defineEventHandler(async (event) => {
   const ip = getRequestIP(event, { xForwardedFor: true }) ?? "unknown";
@@ -37,20 +32,18 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const locale = resolveLocale(
-    (body as Record<string, unknown> | null)?.locale,
-  );
+  const pageLocale = (body as Record<string, unknown> | null)?.locale;
 
   const config = useRuntimeConfig(event);
 
   try {
-    await sendConfirmationEmail(config.smtp, result.data, locale);
+    await sendConfirmationEmail(config.smtp, result.data, pageLocale);
   } catch (error) {
     console.error("[email] Failed to send confirmation email", error);
   }
 
   try {
-    await sendOperatorNotification(config.smtp, result.data);
+    await sendOperatorNotification(config.smtp, result.data, pageLocale);
   } catch (error) {
     console.error("[email] Failed to send operator notification", error);
   }

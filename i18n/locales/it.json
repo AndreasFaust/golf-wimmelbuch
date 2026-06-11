@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Il grande libro Cerca e Trova Golf",
+    "description": "Questo colorato libro Cerca e Trova sul golf presenta ai bambini i migliori aspetti dello sport. Storie divertenti, personaggi simpatici e illustrazioni vivaci trasformano il golf in una vera avventura per i più piccoli."
+  },
+  "hero": {
+    "title": "Il grande libro Cerca e Trova Golf",
+    "description": "Il merchandising personalizzato per il vostro club",
+    "button": "Richiedi ora"
+  },
+  "nav": {
+    "title": "Il grande {brand}",
+    "brand": "Libro Cerca e Trova Golf"
+  },
+  "preface": {
+    "text": "Come avvicinare i bambini in età prescolare al mondo del golf? Con colorati libri Cerca e Trova! Storie divertenti, personaggi simpatici e illustrazioni vivaci trasformano lo sport in una vera avventura per i più piccoli.",
+    "summary": {
+      "title": "Il libro in sintesi",
+      "items": [
+        "14 pagine illustrate a mano",
+        "Adattamento individuale al vostro club e ai vostri sponsor",
+        "Grande formato (260 x 375 mm, simile all'A3)",
+        "Cartone robusto e finitura di alta qualità"
+      ]
+    }
+  },
+  "content": [
+    {
+      "title": "Perché un libro Cerca e Trova?",
+      "description": "Il libro Cerca e Trova presenta ai bambini i migliori aspetti del golf. Le illustrazioni colorate sono simpatiche e adatte all'età. Sono piene di storie divertenti e curiose e suscitano il desiderio di provare lo sport da soli."
+    },
+    {
+      "title": "Un libro, molte possibilità",
+      "description": "Che sia come merchandising nel negozio del club, come regalo di benvenuto per nuovi soci e ospiti, o come passatempo nei studi pediatrici: il libro Cerca e Trova è una vetrina versatile per il club e il golf. E il meglio: i proventi della vendita possono fluire direttamente nel lavoro con i giovani."
+    },
+    {
+      "title": "Su misura per il vostro club",
+      "description": "Il vostro club house disegnato a mano o una caratteristica distintiva del vostro campo adorna la copertina. I vostri sponsor possono lasciare il segno sul retro e sostenere attivamente il progetto."
+    }
+  ],
+  "requestForm": {
+    "title": "Richiedi un preventivo senza impegno",
+    "required": "* Campo obbligatorio",
+    "button": "Invia",
+    "successTitle": "Grazie!",
+    "success": "La vostra richiesta è stata inviata con successo. Vi contatteremo a breve.",
+    "error": "Errore",
+    "errorMessage": "Impossibile inviare la richiesta. Riprovate più tardi.",
+    "email": "E-mail*",
+    "name": "Referente*",
+    "club": "Nome del club*",
+    "auflage": "Tiratura possibile*",
+    "phone": "Telefono",
+    "street": "Via / Numero civico",
+    "city": "CAP / Città",
+    "country": "Paese",
+    "countries": {
+      "de": "Germania",
+      "at": "Austria",
+      "ch": "Svizzera",
+      "bg": "Bulgaria",
+      "da": "Danimarca",
+      "et": "Estonia",
+      "fi": "Finlandia",
+      "fr": "Francia",
+      "el": "Grecia",
+      "it": "Italia",
+      "hr": "Croazia",
+      "lv": "Lettonia",
+      "lt": "Lituania",
+      "nl": "Paesi Bassi",
+      "nb": "Norvegia",
+      "pl": "Polonia",
+      "pt": "Portogallo",
+      "ro": "Romania",
+      "sv": "Svezia",
+      "sk": "Slovacchia",
+      "sl": "Slovenia",
+      "es": "Spagna",
+      "cs": "Cechia",
+      "hu": "Ungheria",
+      "other": "Altro"
+    },
+    "message": "Messaggio aggiuntivo",
+    "fields": {
+      "email": "E-mail",
+      "name": "Referente",
+      "club": "Club",
+      "auflage": "Tiratura",
+      "country": "Paese",
+      "form": "Modulo"
+    },
+    "errors": {
+      "required": "{field} è obbligatorio",
+      "maxLength": "Massimo {maxLength} caratteri",
+      "invalidEmail": "Indirizzo e-mail non valido",
+      "invalidAuflage": "Tiratura non valida",
+      "invalidCountry": "Paese non valido",
+      "invalidRequest": "Richiesta non valida"
+    }
+  },
+  "footer": {
+    "copyright": "Tutti i diritti riservati.",
+    "privacy": "Privacy",
+    "imprint": "Impressum"
+  }
+}
