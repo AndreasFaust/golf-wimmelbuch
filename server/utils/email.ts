@@ -19,6 +19,8 @@ interface SmtpConfig {
   user: string;
   password: string;
   from: string;
+  operator1: string;
+  operator2: string;
 }
 
 let cachedTransporter: Transporter | null = null;
@@ -176,7 +178,7 @@ const OPERATOR_TEMPLATE: ConfirmationEmailTemplate = {
 
 function renderOperatorText(
   data: RequestFormPayload,
-  pageLocale: unknown,
+  pageLocale: unknown
 ): string {
   const t = OPERATOR_TEMPLATE;
   const pageLanguage = getAppLocaleDisplay(pageLocale);
@@ -189,16 +191,12 @@ function renderOperatorText(
     .map((row) => `${row.label}: ${row.value}`)
     .join("\n");
 
-  return [
-    `${t.intro} Der Anfragende hat die Seite auf ${pageLanguage} betrachtet.`,
-    "",
-    rows,
-  ].join("\n");
+  return [`${t.intro}`, "", rows].join("\n");
 }
 
 function renderOperatorHtml(
   data: RequestFormPayload,
-  pageLocale: unknown,
+  pageLocale: unknown
 ): string {
   const t = OPERATOR_TEMPLATE;
   const pageLanguage = getAppLocaleDisplay(pageLocale);
@@ -210,23 +208,29 @@ function renderOperatorHtml(
   ]
     .map(
       (row) =>
-        `<tr><td style="padding:4px 12px 4px 0;color:#666;vertical-align:top;">${escapeHtml(row.label)}</td><td style="padding:4px 0;">${escapeHtml(row.value).replace(/\n/g, "<br>")}</td></tr>`,
+        `<tr><td style="padding:4px 12px 4px 0;color:#666;vertical-align:top;">${escapeHtml(row.label)}</td><td style="padding:4px 0;">${escapeHtml(row.value).replace(/\n/g, "<br>")}</td></tr>`
     )
     .join("");
 
   return `<!doctype html>
 <html lang="de">
   <body style="font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#082137;max-width:600px;margin:0 auto;padding:24px;">
-    <p>${escapeHtml(t.intro)} Der Anfragende hat die Seite auf ${escapeHtml(pageLanguage)} betrachtet.</p>
+    <p>${escapeHtml(t.intro)}</p>
     <table cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin-top:8px;">${rows}</table>
   </body>
 </html>`;
 }
 
+function getOperatorRecipients(config: SmtpConfig): string[] {
+  return [config.operator1, config.operator2]
+    .map((address) => extractEmailAddress(address.trim()))
+    .filter(Boolean);
+}
+
 export async function sendOperatorNotification(
   config: SmtpConfig,
   data: RequestFormPayload,
-  pageLocale: unknown = "de",
+  pageLocale: unknown = "de"
 ): Promise<void> {
   if (!config.host || !config.user || !config.password || !config.from) {
     throw createError({
@@ -235,19 +239,30 @@ export async function sendOperatorNotification(
     });
   }
 
-  const transporter = buildTransporter(config);
-  const operatorAddress = extractEmailAddress(config.from);
+  const operatorAddresses = getOperatorRecipients(config);
+  if (operatorAddresses.length === 0) {
+    console.warn(
+      "[email] operator notification skipped: NUXT_SMTP_OPERATOR_1/2 not configured"
+    );
+    return;
+  }
 
-  console.log(`[email] sending operator notification → ${operatorAddress}`);
-  // Drop Reply-To when it would equal the recipient, otherwise MTAs treat
+  const transporter = buildTransporter(config);
+
+  console.log(
+    `[email] sending operator notification → ${operatorAddresses.join(", ")}`
+  );
+  // Drop Reply-To when it would equal a recipient, otherwise MTAs treat
   // From == To == Reply-To as an autoresponder loop and silently discard.
-  const replyTo =
-    data.email.toLowerCase() === operatorAddress.toLowerCase()
-      ? undefined
-      : data.email;
+  const submitterEmail = data.email.toLowerCase();
+  const replyTo = operatorAddresses.some(
+    (address) => address.toLowerCase() === submitterEmail
+  )
+    ? undefined
+    : data.email;
   const info = await transporter.sendMail({
     from: buildFromHeader(OPERATOR_TEMPLATE.brand, config.from),
-    to: operatorAddress,
+    to: operatorAddresses,
     replyTo,
     subject: OPERATOR_TEMPLATE.subject,
     text: renderOperatorText(data, pageLocale),
